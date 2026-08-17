@@ -359,3 +359,165 @@ body.light-theme .read-btn.sample{background:#e6fffa; color:#0d9488;}
 }
 
 footer{border-top:1px solid var(--border-color); padding:26px 0; margin-top:30px; color:var(--text-muted); font-size:12px; text-align:center;}
+
+/* ============ MOBILE RESPONSIVE FIXES ============ */
+@media (max-width: 768px) {
+  /* Header layout ကို ဖုန်း screen နဲ့ ညှိခြင်း */
+  .header-row {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 0;
+  }
+  
+  .brand {
+    order: 1;
+  }
+  
+  .brand-name {
+    font-size: 17px;
+  }
+  
+  .header-actions {
+    order: 2;
+    gap: 6px;
+    margin-left: auto;
+  }
+  
+  .icon-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+  
+  .auth-btn {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+
+  .lang-btn {
+    padding: 0 6px;
+    font-size: 11px;
+  }
+
+  /* Search box ကို အောက်တစ်ကြောင်းမှာ အပြည့်ချပေးခြင်း */
+  .search-box {
+    order: 3;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 4px;
+    padding: 6px 12px;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 24px 0 20px;
+  }
+  
+  .hero h1 {
+    font-size: 24px;
+  }
+  
+  .hero p {
+    font-size: 13px;
+  }
+  
+  .hero-stats {
+    gap: 14px;
+  }
+  
+  .hero-stats div b {
+    font-size: 18px;
+  }
+
+  .shelf {
+    height: 200px;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-left: 10px;
+  }
+
+  /* Grid Layout (ဖုန်းမှာ တစ်တန်းကို ၂ အုပ်နှုန်းပြသပေးခြင်း) */
+  .catalog-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .catalog-card {
+    position: static;
+    margin-bottom: 10px;
+  }
+
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .book-info {
+    padding: 8px 10px;
+  }
+
+  .book-info h3 {
+    font-size: 13px;
+    line-height: 1.2;
+  }
+
+  .book-info .author {
+    font-size: 10.5px;
+  }
+
+  .price {
+    font-size: 13px;
+  }
+
+  .add-btn, .read-btn {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+
+  /* Drawers (Cart / Wishlist / Library) ကို ဖုန်း screen အပြည့်နီးပါး ချဲ့ပေးခြင်း */
+  .drawer {
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  /* E-Reader Modal ဖုန်း screen နဲ့ အံဝင်ခွင်ကျဖြစ်စေရန် */
+  .reader-modal {
+    height: 95vh;
+    max-width: 100%;
+    border-radius: 0;
+  }
+
+  .reader-header {
+    padding: 10px 14px;
+  }
+
+  .reader-header h3 {
+    font-size: 14px;
+    max-width: 55%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .reader-content {
+    padding: 16px 18px;
+    font-size: 15px;
+  }
+
+  /* Detail Modal */
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-cover {
+    padding: 16px;
+  }
+
+  .detail-book-img {
+    max-height: 220px;
+  }
+
+  .detail-body {
+    padding: 16px;
+  }
+}
