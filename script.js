@@ -521,7 +521,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ==========================================
-// Authentication
+// Authentication (Admin See Only Logic)
 // ==========================================
 function openAuthModal() {
     document.getElementById("auth-modal").style.display = "block";
@@ -594,6 +594,8 @@ function handleLogout() {
 
 function updateAuthUI() {
     const authNav = document.getElementById("auth-nav-container");
+    const adminBtn = document.getElementById("admin-nav-btn");
+    
     if (currentUser) {
         authNav.innerHTML = `
             <div class="user-badge">
@@ -601,8 +603,17 @@ function updateAuthUI() {
                 <span class="logout-link" onclick="handleLogout()">Logout</span>
             </div>
         `;
+
+        // Username သည် "admin" ဖြစ်မှသာ Admin Dashboard ခလုတ်ကို ပြသမည် (Admin See Only)
+        if (currentUser.username.toLowerCase() === "admin") {
+            if (adminBtn) adminBtn.style.display = "inline-block";
+        } else {
+            if (adminBtn) adminBtn.style.display = "none";
+        }
     } else {
         authNav.innerHTML = `<button class="nav-btn auth-btn" onclick="openAuthModal()" id="login-nav-btn">${translations[currentLang].loginBtn}</button>`;
+        // Logout ဖြစ်နေချိန် သို့မဟုတ် Guest ဖြစ်နေပါက Admin ခလုတ်ကို အမြဲဖျောက်ထားမည်
+        if (adminBtn) adminBtn.style.display = "none";
     }
 }
 
