@@ -11,9 +11,9 @@ const LOGIN_LOCKOUT_MS = 24 * 60 * 60 * 1000;       // Password မှားပ�
 
 const MYANMAR_CITIES = [
     "yangon", "ရန်ကုန်", "mandalay", "မန္တလေး", "naypyidaw", "နေပြည်တော်",
-    "bago", "ပဲခူး", "taunggyi", "တောင်ကြီး", "monywa", "မုံရွာ",
+    "bago", "ပဲခူး", "taunggyi", "တောင်ကြီး", "monywa", "မုံရွာ","aungpan","အောင်ပန်း",
     "mawlamyine", "မော်လမြိုင်", "pathein", "ပုသိမ်", "pyay", "ပြည်",
-    "meiktila", "မိတ္ထီလာ", "sittwe", "စစ်တွေ", "lashio", "လားရှိုး"
+    "meiktila", "မိတ္ထီလာ", "sittwe", "စစ်တွေ", "lashio","လားရှိုး","banmaw","ဗန်းမော်"
 ];
 
 // ==========================================
@@ -90,24 +90,24 @@ const TRANSLATIONS = {
 // 3. BOOKS DATABASE (44 BOOKS CATALOG)
 // ==========================================
 const DEFAULT_BOOKS = [
-    { id: 1, title: "ဝဘ်ဒီဇိုင်း အခြေခံ", title_en: "Web Design Basics", author: "ညီညီတာ", author_en: "Nyi Nyi Tar", category: "tech", price: 3500, cover: "images/1.jpg", previewText: "HTML, CSS နှင့် JavaScript တို့ဖြင့် ခေတ်မီဝဘ်ဆိုက်တစ်ခုကို အစမှအဆုံး တည်ဆောက်နည်း လက်တွေ့သင်ခန်းစာ။" },
-    { id: 2, title: "JavaScript ကျွမ်းကျင်မှု", title_en: "Mastering JS", author: "အောင်ကျော်", author_en: "Aung Kyaw", category: "tech", price: 4000, cover: "images/2.jpg", previewText: "Modern ES6+, Async/Await နှင့် DOM Manipulation တို့ကို နက်နက်နဲနဲ လေ့လာနိုင်သော စာအုပ်။" },
-    { id: 3, title: "Python စတင်လေ့လာခြင်း", title_en: "Python Starter", author: "ဇော်မင်း", author_en: "Zaw Min", category: "tech", price: 3800, cover: "images/3.jpg", previewText: "Programming အခြေခံမရှိသူများအတွက် Python ဘာသာစကားကို လွယ်ကူရှင်းလင်းစွာ ရေးသားထားခြင်း။" },
-    { id: 4, title: "Database Architecture", title_en: "Database Design", author: "ကျော်စွာ", author_en: "Kyaw Swa", category: "tech", price: 4500, cover: "images/4.jpg", previewText: "SQL နှင့် Relational Database တည်ဆောက်ပုံ အခြေခံသဘောတရားများ။" },
-    { id: 5, title: "ကျန်းမာသန်စွမ်းသော နေ့ရက်များ", title_en: "Healthy Living", author: "ဒေါက်တာလင်း", author_en: "Dr. Lynn", category: "health", price: 3000, cover: "images/5.jpg", previewText: "နေ့စဉ် အစားအသောက်နှင့် လေ့ကျင့်ခန်းဖြင့် ကိုယ်စိတ်နှစ်ပါး ကျန်းမာစေမည့် နည်းလမ်းကောင်းများ။" },
-    { id: 6, title: "စိတ်ဖိစီးမှု လျှော့ချနည်း", title_en: "Stress Management", author: "မြတ်နိုး", author_en: "Myat Noe", category: "health", price: 3200, cover: "images/6.jpg", previewText: "အလုပ်ခွင်နှင့် လူမှုဘဝ စိတ်ဖိစီးမှုများကို ရင်ဆိုင်ကျော်လွှားနည်း အလေ့အကျင့်ကောင်းများ။" },
-    { id: 7, title: "အိပ်စက်ခြင်း အနုပညာ", title_en: "Art of Sleep", author: "ဒေါက်တာထွန်း", author_en: "Dr. Htun", category: "health", price: 2800, cover: "images/7.jpg", previewText: "ကောင်းမွန်စွာ အိပ်စက်ခြင်းဖြင့် ရုပ်ပိုင်းဆိုင်ရာနှင့် စိတ်ပိုင်းဆိုင်ရာ စွမ်းအင် ပြန်လည်ဖြည့်တင်းခြင်း။" },
-    { id: 8, title: "အာဟာရနှင့် သက်ရှည်ကျန်းမာ", title_en: "Nutrition Guide", author: "သီတာ", author_en: "Thidar", category: "health", price: 3500, cover: "images/8.jpg", previewText: "သဘာဝ အစားအစာများနှင့် ခန္ဓာကိုယ်အတွက် လိုအပ်သော ဗီတာမင်များ အကြောင်း။" },
-    { id: 9, title: "အပြုသဘောဆောင်သော အတွေးအခေါ်", title_en: "Positive Mindset", author: "မင်းသုတ", author_en: "Min Thuta", category: "health", price: 3000, cover: "images/9.jpg", previewText: "ဘဝအောင်မြင်မှုအတွက် အရေးကြီးသော အတွေးအခေါ်နှင့် သဘောထား အမြင်များ။" },
-    { id: 10, title: "တရားထိုင်ခြင်း အလေ့အကျင့်", title_en: "Mindful Meditation", author: "ဉာဏ်လင်း", author_en: "Nyan Lynn", category: "health", price: 2500, cover: "images/10.jpg", previewText: "နေ့စဉ် ၅ မိနစ် တရားထိုင်ခြင်းဖြင့် စိတ်တည်ငြိမ်မှု ရှာဖွေခြင်း။" },
-    { id: 11, title: "အချိန်စီမံခန့်ခွဲမှု", title_en: "Time Mastery", author: "ကျော်ဇေယျ", author_en: "Kyaw Zeya", category: "health", price: 3500, cover: "images/11.jpg", previewText: "အချိန်ကို အကျိုးရှိစွာ အသုံးချပြီး ထိရောက်သော အလုပ်စွမ်းဆောင်ရည် ရရှိစေရန် လမ်းညွှန်။" },
-    { id: 12, title: "သန်းခေါင်ယံ အသံများ", title_en: "Midnight Whispers", author: "သျှင်သန့်", author_en: "Shin Thant", category: "horror", price: 3200, cover: "images/12.jpg", previewText: "တိတ်ဆိတ်သော ညသန်းခေါင်ယံတွင် ပေါ်ထွက်လာသည့် ထူးဆန်းသော အသံများနှင့် သည်းထိတ်ရင်ဖို ဇာတ်လမ်း။" },
-    { id: 13, title: "တစ္ဆေခြံကြီး၏ လျှို့ဝှက်ချက်", title_en: "Haunted Mansion", author: "ရဲရင့်", author_en: "Ye Yint", category: "horror", price: 3500, cover: "images/13.jpg", previewText: "နှစ်ပေါင်းများစွာ လူသူမနီးဘဲ ပစ်ထားသော အိမ်ကြီးထဲမှ လျှို့ဝှက်ဆန်းကြယ် ဖြစ်ရပ်ဆန်းများ။" },
-    { id: 14, title: "အမှောင်ရိပ်ထဲမှ မျက်လုံးများ", title_en: "Shadow Eyes", author: "ကျော်သူ", author_en: "Kyaw Thu", category: "horror", price: 3000, cover: "images/14.jpg", previewText: "အမှောင်ထုထဲမှ စောင့်ကြည့်နေသော မမြင်နိုင်သော မျက်လုံးတစ်စုံအကြောင်း။" },
-    { id: 15, title: "ကျိန်စာသင့် ကျွန်းဆွယ်", title_en: "Cursed Peninsula", author: "နေမင်း", author_en: "Nay Min", category: "horror", price: 3800, cover: "images/15.jpg", previewText: "ရှေးဟောင်း ကျိန်စာတစ်ခု လွှမ်းခြုံထားသော ရွာလေးဆီသို့ ခရီးသွားမိသူများ၏ ကံကြမ္မာ။" },
+    { id: 1, title: "ဝဘ်ဒီဇိုင်း အခြေခံ", title_en: "Web Design Basics", author: "ညီညီတာ", author_en: "Nyi Nyi Tar", category: "tech", price: 6000, cover: "images/1.jpg", previewText: "HTML, CSS နှင့် JavaScript တို့ဖြင့် ခေတ်မီဝဘ်ဆိုက်တစ်ခုကို အစမှအဆုံး တည်ဆောက်နည်း လက်တွေ့သင်ခန်းစာ။" },
+    { id: 2, title: "JavaScript ကျွမ်းကျင်မှု", title_en: "Mastering JS", author: "အောင်ကျော်", author_en: "Aung Kyaw", category: "tech", price: 10000, cover: "images/2.jpg", previewText: "Modern ES6+, Async/Await နှင့် DOM Manipulation တို့ကို နက်နက်နဲနဲ လေ့လာနိုင်သော စာအုပ်။" },
+    { id: 3, title: "Python စတင်လေ့လာခြင်း", title_en: "Python Starter", author: "ဇော်မင်း", author_en: "Zaw Min", category: "tech", price: 6800, cover: "images/3.jpg", previewText: "Programming အခြေခံမရှိသူများအတွက် Python ဘာသာစကားကို လွယ်ကူရှင်းလင်းစွာ ရေးသားထားခြင်း။" },
+    { id: 4, title: "Database Architecture", title_en: "Database Design", author: "ကျော်စွာ", author_en: "Kyaw Swa", category: "tech", price: 9800, cover: "images/4.jpg", previewText: "SQL နှင့် Relational Database တည်ဆောက်ပုံ အခြေခံသဘောတရားများ။" },
+    { id: 5, title: "ကျန်းမာသန်စွမ်းသော နေ့ရက်များ", title_en: "Healthy Living", author: "ဒေါက်တာလင်း", author_en: "Dr. Lynn", category: "health", price: 10000, cover: "images/5.jpg", previewText: "နေ့စဉ် အစားအသောက်နှင့် လေ့ကျင့်ခန်းဖြင့် ကိုယ်စိတ်နှစ်ပါး ကျန်းမာစေမည့် နည်းလမ်းကောင်းများ။" },
+    { id: 6, title: "စိတ်ဖိစီးမှု လျှော့ချနည်း", title_en: "Stress Management", author: "မြတ်နိုး", author_en: "Myat Noe", category: "health", price: 6200, cover: "images/6.jpg", previewText: "အလုပ်ခွင်နှင့် လူမှုဘဝ စိတ်ဖိစီးမှုများကို ရင်ဆိုင်ကျော်လွှားနည်း အလေ့အကျင့်ကောင်းများ။" },
+    { id: 7, title: "အိပ်စက်ခြင်း အနုပညာ", title_en: "Art of Sleep", author: "ဒေါက်တာထွန်း", author_en: "Dr. Htun", category: "health", price: 9800, cover: "images/7.jpg", previewText: "ကောင်းမွန်စွာ အိပ်စက်ခြင်းဖြင့် ရုပ်ပိုင်းဆိုင်ရာနှင့် စိတ်ပိုင်းဆိုင်ရာ စွမ်းအင် ပြန်လည်ဖြည့်တင်းခြင်း။" },
+    { id: 8, title: "အာဟာရနှင့် သက်ရှည်ကျန်းမာ", title_en: "Nutrition Guide", author: "သီတာ", author_en: "Thidar", category: "health", price: 7000, cover: "images/8.jpg", previewText: "သဘာဝ အစားအစာများနှင့် ခန္ဓာကိုယ်အတွက် လိုအပ်သော ဗီတာမင်များ အကြောင်း။" },
+    { id: 9, title: "အပြုသဘောဆောင်သော အတွေးအခေါ်", title_en: "Positive Mindset", author: "မင်းသုတ", author_en: "Min Thuta", category: "health", price: 14500, cover: "images/9.jpg", previewText: "ဘဝအောင်မြင်မှုအတွက် အရေးကြီးသော အတွေးအခေါ်နှင့် သဘောထား အမြင်များ။" },
+    { id: 10, title: "တရားထိုင်ခြင်း အလေ့အကျင့်", title_en: "Mindful Meditation", author: "ဉာဏ်လင်း", author_en: "Nyan Lynn", category: "health", price: 13000, cover: "images/10.jpg", previewText: "နေ့စဉ် ၅ မိနစ် တရားထိုင်ခြင်းဖြင့် စိတ်တည်ငြိမ်မှု ရှာဖွေခြင်း။" },
+    { id: 11, title: "အချိန်စီမံခန့်ခွဲမှု", title_en: "Time Mastery", author: "ကျော်ဇေယျ", author_en: "Kyaw Zeya", category: "health", price:11000, cover: "images/11.jpg", previewText: "အချိန်ကို အကျိုးရှိစွာ အသုံးချပြီး ထိရောက်သော အလုပ်စွမ်းဆောင်ရည် ရရှိစေရန် လမ်းညွှန်။" },
+    { id: 12, title: "သန်းခေါင်ယံ အသံများ", title_en: "Midnight Whispers", author: "သျှင်သန့်", author_en: "Shin Thant", category: "horror", price: 15000, cover: "images/12.jpg", previewText: "တိတ်ဆိတ်သော ညသန်းခေါင်ယံတွင် ပေါ်ထွက်လာသည့် ထူးဆန်းသော အသံများနှင့် သည်းထိတ်ရင်ဖို ဇာတ်လမ်း။" },
+    { id: 13, title: "တစ္ဆေခြံကြီး၏ လျှို့ဝှက်ချက်", title_en: "Haunted Mansion", author: "ရဲရင့်", author_en: "Ye Yint", category: "horror", price: 8000, cover: "images/13.jpg", previewText: "နှစ်ပေါင်းများစွာ လူသူမနီးဘဲ ပစ်ထားသော အိမ်ကြီးထဲမှ လျှို့ဝှက်ဆန်းကြယ် ဖြစ်ရပ်ဆန်းများ။" },
+    { id: 14, title: "အမှောင်ရိပ်ထဲမှ မျက်လုံးများ", title_en: "Shadow Eyes", author: "ကျော်သူ", author_en: "Kyaw Thu", category: "horror", price: 9000, cover: "images/14.jpg", previewText: "အမှောင်ထုထဲမှ စောင့်ကြည့်နေသော မမြင်နိုင်သော မျက်လုံးတစ်စုံအကြောင်း။" },
+    { id: 15, title: "ကျိန်စာသင့် ကျွန်းဆွယ်", title_en: "Cursed Peninsula", author: "နေမင်း", author_en: "Nay Min", category: "horror", price: 4500, cover: "images/15.jpg", previewText: "ရှေးဟောင်း ကျိန်စာတစ်ခု လွှမ်းခြုံထားသော ရွာလေးဆီသို့ ခရီးသွားမိသူများ၏ ကံကြမ္မာ။" },
     { id: 16, title: "မုန်တိုင်းပြီးနောက် နေရောင်ခြည်", title_en: "After the Storm", author: "နုနုရည်", author_en: "Nu Nu Yee", category: "drama", price: 3200, cover: "images/16.jpg", previewText: "ဘဝမုန်တိုင်းများကို ကြံ့ကြံ့ခံ ကျော်ဖြတ်ခဲ့သော မိသားစုတစ်စု၏ ရင်နင့်ဖွယ် ဒရာမာဇာတ်လမ်း။" },
-    { id: 17, title: "မေ့မရသော အရိပ်များ", title_en: "Unforgettable Shadows", author: "ခင်ဆွေဦး", author_en: "Khin Swe Oo", category: "drama", price: 3500, cover: "images/17.jpg", previewText: "အတိတ်၏ မှတ်ဉာဏ်များနှင့် ချစ်ခြင်းမေတ္တာအကြား လွန်ဆွဲရသော လူငယ်တစ်ဦး၏ ခံစားချက်။" },
-    { id: 18, title: "ဝေးလွင့်သွားသော ငှက်ငယ်များ", title_en: "Distant Birds", author: "ဂျူး", author_en: "Ju", category: "drama", price: 3800, cover: "images/18.jpg", previewText: "ဘဝရပ်တည်ရေးအတွက် မွေးရပ်မြေကို ခွဲခွာခဲ့ရသူတို့၏ ရင်တွင်းခံစားချက် ရသဝတ္ထု။" }
+    { id: 17, title: "မေ့မရသော အရိပ်များ", title_en: "Unforgettable Shadows", author: "ခင်ဆွေဦး", author_en: "Khin Swe Oo", category: "drama", price: 3600, cover: "images/17.jpg", previewText: "အတိတ်၏ မှတ်ဉာဏ်များနှင့် ချစ်ခြင်းမေတ္တာအကြား လွန်ဆွဲရသော လူငယ်တစ်ဦး၏ ခံစားချက်။" },
+    { id: 18, title: "ဝေးလွင့်သွားသော ငှက်ငယ်များ", title_en: "Distant Birds", author: "ဂျူး", author_en: "Ju", category: "drama", price: 10000, cover: "images/18.jpg", previewText: "ဘဝရပ်တည်ရေးအတွက် မွေးရပ်မြေကို ခွဲခွာခဲ့ရသူတို့၏ ရင်တွင်းခံစားချက် ရသဝတ္ထု။" }
 ];
 
 for (let i = 19; i <= 44; i++) {
@@ -767,7 +767,7 @@ function renderAdminOrders() {
                 <strong style="font-size: 16px; color: var(--primary-color);"><i class="fa-brands fa-telegram" style="color: #229ED9; font-size: 20px;"></i> Telegram Live Orders & Notifications</strong>
                 <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">User များ မှာယူထားသော အော်ဒါအချက်အလက်များကို Telegram Bot သို့ Noti အလိုအလျောက် ပို့ပေးထားပါသည်။</p>
             </div>
-            <a href="https://t.me/TheReadingHomes_bot" target="_blank" style="background: #229ED9; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold; display: inline-flex; align-items: center; gap: 6px;">
+            <a href="https://t.me/reading_homies_order_bot" target="_blank" style="background: #229ED9; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold; display: inline-flex; align-items: center; gap: 6px;">
                 <i class="fa-brands fa-telegram"></i> Open TG Bot
             </a>
         </div>
@@ -831,7 +831,6 @@ function deleteAdminOrder(index) {
     }
 }
 
-// စာအုပ်အသစ် ထည့်သွင်းခြင်း (Add Book)
 function handleAddNewBook(e) {
     e.preventDefault();
     const title = document.getElementById("new-book-title").value.trim();
@@ -863,7 +862,6 @@ function handleAddNewBook(e) {
     switchAdminTab("managebooks");
 }
 
-// စာအုပ်များ စီမံခန့်ခွဲရန်နှင့် ဖျက်ရန် Render ပြုလုပ်ခြင်း (Manage/Delete Books)
 function renderAdminManageBooks() {
     const container = document.getElementById("admin-books-manage-list");
     if (!container) return;
@@ -889,7 +887,6 @@ function renderAdminManageBooks() {
     `).join("");
 }
 
-// စာအုပ်ဖျက်ပစ်ခြင်း Function (Delete Book)
 function deleteBookById(bookId) {
     const targetBook = booksData.find(b => b.id === bookId);
     const bookTitle = targetBook ? targetBook.title : "ဒီစာအုပ်";
@@ -898,7 +895,6 @@ function deleteBookById(bookId) {
         booksData = booksData.filter(b => b.id !== bookId);
         localStorage.setItem("custom_books_data", JSON.stringify(booksData));
         
-        // Cart ထဲတွင်လည်း အဆိုပါစာအုပ်ပါနေပါက တစ်ပါတည်း ဖယ်ထုတ်မည်
         cart = cart.filter(item => item.id !== bookId);
         saveCart();
 
