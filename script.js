@@ -1,4 +1,4 @@
-// စာအုပ်ဒေတာများ (Preview & Best Highlights Review)
+// စာအုပ်ဒေတာများ (Book Overview & Highlights)
 const booksData = [
     {
         id: 1,
@@ -212,9 +212,8 @@ const booksData = [
         previewText_en: `A gripping suburban drama exploring sacrifice, survival, and maternal bonds in difficult economic times.
 
 🌟 Key Highlights:
-• The poignant relationship and solemn promises between two struggling women.
-• Emotional struggles of poverty and resilience during crisis times.
-• A bittersweet critique of social inequality and survival.`
+• The poignant relationship and practical struggles between two determined women.
+• Poignant reflections on society and resilience.`
     },
     {
         id: 11,
@@ -237,8 +236,7 @@ const booksData = [
 
 🌟 Key Highlights:
 • A haunting opening sequence amidst a raging midnight storm.
-• The sudden revelation by investigators identifying the shocking culprit.
-• The destructive path of toxic jealousy and family betrayal.`
+• The sudden revelation by investigators identifying the culprit.`
     },
     {
         id: 12,
@@ -257,12 +255,7 @@ const booksData = [
 • ဘေးအိမ်မှ တိတ်တဆိတ် စတင်လာသော ပရလောက၏ ထူးဆန်းသော သတိပေးချက်များ။
 
 💡 ဖတ်ရှုသင့်သူများ: အိမ်နီးချင်း ပရလောက ထိတ်လန့်ဖွယ် ဇာတ်လမ်းများကို ဖတ်ရှုလိုသူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `Terrifying nightmares of being trapped in roaring flames foretell eerie supernatural occurrences next door.
-
-🌟 Key Highlights:
-• Intense sensory description of waking from a claustrophobic fire nightmare.
-• The contrast between peaceful morning normalcy and looming dread.
-• Mysterious paranormal omens unfolding from the house next door.`
+        previewText_en: `Terrifying nightmares of being trapped in roaring flames foretell eerie supernatural occurrences next door.`
     },
     {
         id: 13,
@@ -281,12 +274,7 @@ const booksData = [
 • နေပြည်တော်သို့ ရောက်ရှိချိန်တွင် တဖြည်းဖြည်း ပေါ်ပေါက်လာသော ရှေးဟောင်း လျှို့ဝှက်ဆန်းကြယ် ကံကြမ္မာများ။
 
 💡 ဖတ်ရှုသင့်သူများ: သမိုင်းနောက်ခံ ရှေးဟောင်း လျှို့ဝှက်ဆန်းကြယ် ဇာတ်လမ်းများကို မြတ်နိုးသူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `Historical occult intrigue spanning centuries from the ancient Kingdom of Inwa.
-
-🌟 Key Highlights:
-• An ancient curse tied to a foreign prisoner in the royal dungeons in 880 ME.
-• A humble village youth summoned unexpectedly to the capital city.
-• Unearthing royal conspiracies and dark historical legacies.`
+        previewText_en: `Historical occult intrigue spanning centuries from the ancient Kingdom of Inwa.`
     },
     {
         id: 14,
@@ -305,12 +293,7 @@ const booksData = [
 • ကျေးလက်ဒေသ၏ ပကတိ ရိုးသားကြည်လင်သော ရယ်မောစရာ အငွေ့အသက်များ။
 
 💡 ဖတ်ရှုသင့်သူများ: စိတ်လက်ပေါ့ပါးပြီး အမောပြေ ရယ်မောလိုသူတိုင်း ဖတ်ရှုသင့်သော ဟာသစာအုပ် ဖြစ်ပါသည်။`,
-        previewText_en: `A lively collection of warm-hearted and witty humorous tales from rural upper Myanmar.
-
-🌟 Key Highlights:
-• Quick-witted Maung Aye uniting the village during the Tazaungmone festival.
-• Balancing traditional pagoda merits with village football matches and comedy theater.
-• Refreshing countryside laughter and community charm.`
+        previewText_en: `A lively collection of warm-hearted and witty humorous tales from rural upper Myanmar.`
     },
     {
         id: 15,
@@ -329,12 +312,7 @@ const booksData = [
 • စကားလုံးများ မှားယွင်းရောထွေးရင်း ရိုက်ကူးရေး တစ်ဖွဲ့လုံး အူတက်အောင် ရယ်ခဲ့ရသည့် အမှတ်တရများ။
 
 💡 ဖတ်ရှုသင့်သူများ: စာရေးဆရာ နီကိုရဲ၏ ပြောင်မြောက်သော ဟာသအရေးအသားများကို နှစ်သက်သူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `Brilliant comedic behind-the-scenes memoirs from Myanmar film production sets by Niko Ye.
-
-🌟 Key Highlights:
-• The hilarious instant shift from heavy dramatic crying to set-wide laughter upon calling "Cut".
-• Unpredictable bloopers, dust-induced tears, and tongue-tied takes.
-• The vibrant, humorous essence of the filmmaking industry.`
+        previewText_en: `Brilliant comedic behind-the-scenes memoirs from Myanmar film production sets by Niko Ye.`
     },
     {
         id: 16,
@@ -353,12 +331,7 @@ const booksData = [
 • ပိုင်ဆိုင်လိုစိတ် ကင်းစင်စွာဖြင့် ချစ်ရသူ အမြဲ ပျော်ရွှင်စေရန် ဆုတောင်းပေးသည့် အဝါရောင် ပန်းပွင့်လေးများ၏ မေတ္တာ။
 
 💡 ဖတ်ရှုသင့်သူများ: နူးညံ့ပြီး စိတ်ကို အေးချမ်းစေမည့် အချစ်ဝတ္ထုတိုများကို နှစ်သက်သူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `A gentle poetic romance of unconditional affection, personal healing, and sunflower-like devotion.
-
-🌟 Key Highlights:
-• Heartfelt confessions of choosing one special person above all else.
-• Gentle mindful reminders to cultivate inner peace and calm anxieties.
-• Loving without possessiveness—wishing pure happiness for the beloved.`
+        previewText_en: `A gentle poetic romance of unconditional affection, personal healing, and sunflower-like devotion.`
     },
     {
         id: 17,
@@ -377,12 +350,7 @@ const booksData = [
 • လောကကြီးတွင် ဘယ်သူနှင့်မျှ ပြိုင်ဆိုင်နေစရာ မလိုဘဲ စိတ်ငြိမ်းချမ်းမှုကို ရယူနည်းများ။
 
 💡 ဖတ်ရှုသင့်သူများ: လောက၏ ရှုပ်ထွေးမှုများမှ ခေတ္တခွာပြီး စိတ်နှလုံး အနားယူလိုသူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `Reflective mindfulness poetry celebrating solitude, quiet simplicity, and authentic contentment.
-
-🌟 Key Highlights:
-• Leaving pride and superficial status at the door to find inner clarity.
-• Finding profound beauty in fallen leaves and quiet morning sunlight.
-• Liberation from social competition and resting in mindful stillness.`
+        previewText_en: `Reflective mindfulness poetry celebrating solitude, quiet simplicity, and authentic contentment.`
     },
     {
         id: 18,
@@ -401,12 +369,7 @@ const booksData = [
 • အတိတ်က ဒဏ်ရာများကို ဖေးမထွေးပွေ့ပြီး နေ့ရက်တိုင်းကို ချစ်သူများနေ့အဖြစ် ဖြတ်သန်းပုံ။
 
 💡 ဖတ်ရှုသင့်သူများ: ရိုမန်းတစ်ဆန်သော အချစ်ကဗျာများနှင့် စကားပြေများကို မြတ်နိုးသူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `An intimate and touching collection of romantic poetry and tender love letters.
-
-🌟 Key Highlights:
-• Building relationships on quiet warmth rather than fragile promises.
-• Unconditional love that persists through every tomorrow.
-• Healing past wounds through genuine care and everyday companionship.`
+        previewText_en: `An intimate and touching collection of romantic poetry and tender love letters.`
     },
     {
         id: 19,
@@ -425,16 +388,11 @@ const booksData = [
 • လောကကြီးတွင် အမြဲ အလောတကြီး မဖြစ်ဘဲ သာယာသော နေ့ရက်များကို ဖန်တီးနည်း။
 
 💡 ဖတ်ရှုသင့်သူများ: စိတ်ကို နွေးထွေးအေးချမ်းစေမည့် ဝတ္ထုတိုလေးများကို ဖတ်ရှုလိုသူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `A heartwarming novella highlighting quiet companionship, winter warmth, and peaceful days.
-
-🌟 Key Highlights:
-• The soothing comfort of warm coffee and stillness on a frosty morning.
-• Finding beauty and warmth in being understood by someone special.
-• Slowing down to appreciate everyday moments of genuine peace.`
+        previewText_en: `A heartwarming novella highlighting quiet companionship, winter warmth, and peaceful days.`
     }
 ];
 
-// Dictionary for Full UI Translation
+// Dictionary for Full UI Translation (စာအုပ် မိတ်ဆက် အသုံးအနှုန်း ထည့်သွင်းထားပါသည်)
 const translations = {
     my: {
         brand: "📚 Myanmar Bookstore",
@@ -450,7 +408,8 @@ const translations = {
         titleDrama: "🎭 ဒရာမာနှင့် ရသဝတ္ထု (Drama & Fiction)",
         titleHumor: "😂 ဟာသနှင့် အပန်းဖြေ (Humor & Fun)",
         titleRomance: "💖 အချစ်နှင့် ကဗျာ (Romance & Poetry)",
-        readBtn: "📖 အမြည်းဖတ်",
+        readBtn: "💡 စာအုပ် မိတ်ဆက်",
+        readerBadge: "💡 စာအုပ် မိတ်ဆက်",
         addCartBtn: "🛒 ဝယ်မည်",
         cartModalTitle: "Shopping Cart & Checkout",
         cartModalSubtitle: "အိမ်ရောက်ငွေချေစနစ်ဖြင့် လွယ်ကူလျင်မြန်စွာ မှာယူလိုက်ပါ",
@@ -483,7 +442,8 @@ const translations = {
         titleDrama: "🎭 Drama & Fiction",
         titleHumor: "😂 Humor & Comedy",
         titleRomance: "💖 Romance & Poetry",
-        readBtn: "📖 Preview",
+        readBtn: "💡 Book Overview",
+        readerBadge: "💡 Book Overview",
         addCartBtn: "🛒 Add Cart",
         cartModalTitle: "Shopping Cart & Checkout",
         cartModalSubtitle: "Convenient Cash On Delivery Service",
@@ -521,7 +481,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ==========================================
-// Authentication (Admin See Only Logic)
+// Authentication (Admin See Only)
 // ==========================================
 function openAuthModal() {
     document.getElementById("auth-modal").style.display = "block";
@@ -604,7 +564,6 @@ function updateAuthUI() {
             </div>
         `;
 
-        // Username သည် "admin" ဖြစ်မှသာ Admin Dashboard ခလုတ်ကို ပြသမည် (Admin See Only)
         if (currentUser.username.toLowerCase() === "admin") {
             if (adminBtn) adminBtn.style.display = "inline-block";
         } else {
@@ -612,7 +571,6 @@ function updateAuthUI() {
         }
     } else {
         authNav.innerHTML = `<button class="nav-btn auth-btn" onclick="openAuthModal()" id="login-nav-btn">${translations[currentLang].loginBtn}</button>`;
-        // Logout ဖြစ်နေချိန် သို့မဟုတ် Guest ဖြစ်နေပါက Admin ခလုတ်ကို အမြဲဖျောက်ထားမည်
         if (adminBtn) adminBtn.style.display = "none";
     }
 }
@@ -684,7 +642,7 @@ function handleSearch() {
 }
 
 // ==========================================
-// E-Reader Logic (Phone & PC Optimized)
+// E-Reader Logic (စာအုပ် မိတ်ဆက်)
 // ==========================================
 function openReader(bookId) {
     const book = booksData.find(b => b.id === bookId);
@@ -721,7 +679,7 @@ function adjustReaderFont(delta) {
 }
 
 // ==========================================
-// Shopping Cart & Cash on Delivery Checkout
+// Shopping Cart & COD Checkout
 // ==========================================
 function addToCart(bookId) {
     const book = booksData.find(b => b.id === bookId);
@@ -905,6 +863,10 @@ function updateLanguageUI() {
     document.getElementById("title-drama").innerText = t.titleDrama;
     document.getElementById("title-humor").innerText = t.titleHumor;
     document.getElementById("title-romance").innerText = t.titleRomance;
+
+    // Reader Modal Badge
+    const readerBadge = document.getElementById("reader-modal-badge");
+    if (readerBadge) readerBadge.innerText = t.readerBadge;
 
     // Checkout Modal Texts
     document.getElementById("cart-modal-title").innerText = t.cartModalTitle;
