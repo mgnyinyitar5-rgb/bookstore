@@ -1,11 +1,17 @@
 // ==========================================
-// Telegram Bot Settings (Directly Configured)
+// Telegram Bot Configuration
 // ==========================================
 const TELEGRAM_BOT_TOKEN = "8939232025:AAEwUq-Zkv3fuHHxJpLnhTzArVt22Q4Bjuo";
 const TELEGRAM_CHAT_ID = "8297181241";
 
-// စာအုပ်ဒေတာများ (Preview & Best Highlights Review)
-const booksData = [
+// Admin Login Credentials
+const ADMIN_CREDENTIALS = {
+    username: "admin",
+    password: "admin123"
+};
+
+// Default Books Data
+const defaultBooksData = [
     {
         id: 1,
         title: "PHP လိုတိုရှင်း (အခန်း ၁ - World Wide Web)",
@@ -23,12 +29,7 @@ const booksData = [
 • GET (ဒေတာ ရယူခြင်း) နှင့် POST (ဒေတာ ပေးပို့ပြင်ဆင်ခြင်း) နည်းလမ်းများ၏ လက်တွေ့ အသုံးချပုံများ။
 
 💡 ဖတ်ရှုသင့်သူများ: Web Development ကို အခြေခံမှစတင်၍ စနစ်တကျ လေ့လာလိုသူများအတွက် မရှိမဖြစ် လက်စွဲစာအုပ် ဖြစ်ပါသည်။`,
-        previewText_en: `PHP powers major platforms like Facebook and Wikipedia, serving as the foundational server-side language of the modern web.
-
-🌟 Key Highlights:
-• Clear distinctions between the Web and Internet infrastructure.
-• The 3 pillars of Web Architecture: Client, Server, and HTTP Protocol.
-• Practical understanding of GET and POST request methods.`
+        previewText_en: `PHP powers major platforms like Facebook and Wikipedia, serving as the foundational server-side language of the modern web.`
     },
     {
         id: 2,
@@ -47,12 +48,7 @@ const booksData = [
 • PascalCase (Class), camelCase (Method) နှင့် snake_case (Database) အမည်ပေးစနစ်များကို တိကျစွာ လမ်းညွှန်ထားခြင်း။
 
 💡 ဖတ်ရှုသင့်သူများ: PHP အခြေခံရပြီးနောက် Production-Ready Web Application များကို လျင်မြန်စွာ ရေးဆွဲလိုသော Developer များအတွက် အထူးသင့်လျော်ပါသည်။`,
-        previewText_en: `Laravel makes PHP web development clean, expressive, and elegant through its MVC architecture and rich ecosystem.
-
-🌟 Key Highlights:
-• Core PHP OOP concepts and modern object instantiation.
-• "Convention Over Configuration" standard naming conventions.
-• Clean structure for classes, methods, and database relationships.`
+        previewText_en: `Laravel makes PHP web development clean, expressive, and elegant through its MVC architecture.`
     },
     {
         id: 4,
@@ -68,15 +64,9 @@ const booksData = [
 🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
 • "Big Data သည် လောင်စာဆီအသစ် (New Oil) ဖြစ်ပါက Analytics သည် စက်ယန္တရား (Engine) ဖြစ်သည်" ဟူသော သဘောတရား။
 • Deep Blue မှစတင်ကာ AlphaGo Zero အထိ ဉာဏ်ရည်တု၏ ခုန်ပျံကျော်လွှား တိုးတက်လာမှု သမိုင်းမှတ်တိုင်များ။
-• လူသားတို့၏ ဉာဏ်စွမ်းကို အယ်လ်ဂိုရီသမ်များဖြင့် ဆတိုးပွားစေပြီး Customer ရှာဖွေမှုနှင့် ဆုံးဖြတ်ချက်များကို အလိုအလျောက် ဆောင်ရွက်နိုင်ပုံ။
 
 💡 ဖတ်ရှုသင့်သူများ: လုပ်ငန်းခွင်အတွင်း AI နည်းပညာဖြင့် စျေးကွက်အသာစီး ရယူလိုသော စီးပွားရေးလုပ်ငန်းရှင်များအတွက် လက်စွဲစာအုပ် ဖြစ်ပါသည်။`,
-        previewText_en: `A practical business guide bridging complex AI informatics into commercial strategies.
-
-🌟 Key Highlights:
-• Big Data as the fuel and Analytics as the combustion engine.
-• Milestones of AI development from Deep Blue to AlphaGo Zero.
-• Automating customer prospecting and scaling business intelligence.`
+        previewText_en: `A practical business guide bridging complex AI informatics into commercial strategies.`
     },
     {
         id: 5,
@@ -91,16 +81,8 @@ const booksData = [
 
 🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
 • မရည်ရွယ်ဘဲ ဖြစ်ခဲ့သော အမှားများအတွက် ကိုယ့်ကိုယ်ကိုယ် အပြစ်တင်မနေဘဲ ခွင့်လွှတ်ကုစားနည်း (Self-Forgiveness)။
-• စိတ်ထဲ စွဲကျန်နေသော အတိတ်မှ ဝန်ထုပ်ဝန်ပိုးများနှင့် အကြွေးများကို အလှူဒါနဖြင့် စိတ်သက်သာရာ ရစေပုံ။
-• ဆက်ဆံရေးများတွင် မပြတ်မသား ရှောင်ပြေးခြင်း (Ghosting) မလုပ်ဘဲ ရိုးသားစွာ ရင်ဆိုင်ဖြေရှင်းနည်း။
-
-💡 ဖတ်ရှုသင့်သူများ: စိတ်ဖိစီးမှုများကြားမှ မိမိကိုယ်ကို ပြန်လည်ကုစား (Heal) လိုသူများအတွက် စိတ်ခွန်အားပေး စာအုပ်ဖြစ်ပါသည်။`,
-        previewText_en: `A heartfelt guide on finding peace, letting go of guilt, and nurturing emotional clarity amidst modern life pressures.
-
-🌟 Key Highlights:
-• Cultivating self-forgiveness over accidental past mistakes.
-• Releasing lingering emotional burdens and mental debts.
-• Integrity, honesty, and healthy communication in relationships.`
+• စိတ်ထဲ စွဲကျန်နေသော အတိတ်မှ ဝန်ထုပ်ဝန်ပိုးများကို စနစ်တကျ လွှတ်ချနည်း။`,
+        previewText_en: `A heartfelt guide on finding peace, letting go of guilt, and nurturing emotional clarity.`
     },
     {
         id: 6,
@@ -114,17 +96,8 @@ const booksData = [
         previewText: `မပြီးဆုံးနိုင်သော သံသရာလည်နေသည့် အတွေးလွန်ခြင်း (Overthinking) ကို ရပ်တန့်ပြီး ပစ္စုပ္ပန်တွင် အေးချမ်းစွာ ရှင်သန်နည်း စိတ်ပညာ လမ်းညွှန် ဖြစ်ပါသည်။
 
 🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
-• အတွေးလွန်ခြင်းသည် ပုံမှန် စဉ်းစားတွေးခေါ်မှုမဟုတ်ဘဲ အသိတရားကို ဖုံးကွယ်သွားစေသည့် စိတ်သံသရာ (Loop) ဖြစ်ပုံ။
-• ကျန်းမာရေး သောကများမှတစ်ဆင့် မလိုအပ်ဘဲ အတွေးပွားပြီး စိတ်ဓာတ်ကျဆင်းလာရသည့် အကြောင်းရင်းများ။
-• မဖိတ်ခေါ်ဘဲ ဝင်လာသော အတွေးဆိုးများကို သတိပြုမိပြီး စနစ်တကျ လွှတ်ချနိုင်မည့် နည်းစနစ်များ။
-
-💡 ဖတ်ရှုသင့်သူများ: စိုးရိမ်သောကများပြီး အမြဲ အတွေးလွန်တတ်သူများအတွက် စိတ်အေးချမ်းမှု ရရှိစေမည့် စာအုပ် ဖြစ်ပါသည်။`,
-        previewText_en: `Overcome mental exhaustion and intrusive anxiety by breaking the repetitive loops of overthinking.
-
-🌟 Key Highlights:
-• Understanding the destructive loop of cognitive overthinking.
-• Avoiding meta-worry and catastrophic scenario planning.
-• Practical grounding techniques to regain present-moment focus.`
+• အတွေးလွန်ခြင်းသည် ပုံမှန် စဉ်းစားတွေးခေါ်မှုမဟုတ်ဘဲ အသိတရားကို ဖုံးကွယ်သွားစေသည့် စိတ်သံသရာ (Loop) ဖြစ်ပုံ။`,
+        previewText_en: `Overcome mental exhaustion and intrusive anxiety by breaking repetitive loops.`
     },
     {
         id: 7,
@@ -135,20 +108,8 @@ const booksData = [
         category: "health",
         price: 3500,
         cover: "images/7.jpg",
-        previewText: `အသက် ၄၀ ကျော်အရွယ်တွင် ကျန်းမာပျော်ရွှင်စွာဖြင့် သက်ရှည်ကျန်းမာစေရန် လိုက်နာရမည့် ဆေးပညာပေး လမ်းညွှန်ချက်များနှင့် သုတေသနများ ဖြစ်ပါသည်။
-
-🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
-• အသက် ၇၀ မှ ၉၀ ကျော်အထိ ကမ္ဘာကျော် စွမ်းဆောင်ချက်များ ပြုလုပ်ခဲ့ကြသည့် သမိုင်းဝင် ပုဂ္ဂိုလ်ကြီးများ၏ အထ္ထုပ္ပတ္တိများ။
-• အစားအသောက် လျှော့စားခြင်း (Caloric Restriction) ဖြင့် ဆဲလ်များ သက်တမ်းရှည်စေပုံ။
-• နှလုံး၊ သွေးကြောစနစ် ထိန်းသိမ်းခြင်းနှင့် ဦးနှောက်မှတ်ဉာဏ် မယိုယွင်းစေရန် နေထိုင်နည်း လမ်းညွှန်များ။
-
-💡 ဖတ်ရှုသင့်သူများ: အသက် ၄၀ ကျော် အရွယ်များနှင့် မိဘဘိုးဘွားများ သက်ရှည်ကျန်းမာစေရန် လက်ဆောင်ပေးဖတ်သင့်သော စာအုပ် ဖြစ်ပါသည်။`,
-        previewText_en: `Evidence-based medical advice and longevity wisdom tailored for graceful, active aging past forty.
-
-🌟 Key Highlights:
-• Inspiring achievements of global figures thriving in their 70s, 80s, and 90s.
-• Caloric moderation for metabolic health and cellular longevity.
-• Essential cardiovascular care and cognitive fitness practices.`
+        previewText: `အသက် ၄၀ ကျော်အရွယ်တွင် ကျန်းမာပျော်ရွှင်စွာဖြင့် သက်ရှည်ကျန်းမာစေရန် လိုက်နာရမည့် ဆေးပညာပေး လမ်းညွှန်ချက်များနှင့် သုတေသနများ ဖြစ်ပါသည်။`,
+        previewText_en: `Evidence-based medical advice and longevity wisdom tailored for aging past forty.`
     },
     {
         id: 8,
@@ -159,20 +120,8 @@ const booksData = [
         category: "health",
         price: 4000,
         cover: "images/8.jpg",
-        previewText: `ကိုယ့်ရဲ့ အတွင်းစိတ် တုန်ခါမှု (Vibration & Frequency) ကို မြှင့်တင်ပြီး ပိုမိုကောင်းမွန်သော ဘဝကို ပိုင်ဆိုင်နိုင်စေမည့် ကမ္ဘာကျော် စာအုပ်ကောင်း ဖြစ်ပါသည်။
-
-🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
-• ပျော်ရွှင်မှုကို အပြင်ဘက်တွင် လိုက်ရှာမနေဘဲ မိမိအတွင်းစိတ်မှ စတင်တည်ဆောက်နည်း။
-• အဆိုးမြင် Toxic ပတ်ဝန်းကျင်ကို ရှောင်ရှားပြီး အပြုသဘောဆောင်သူများနှင့် ပေါင်းသင်းခြင်း။
-• Power Pose ကဲ့သို့သော ကိုယ်ဟန်အမူအရာ ပြောင်းလဲခြင်းဖြင့် စိတ်ဖိစီးမှု ဟော်မုန်းများ လျှော့ချနည်း။
-
-💡 ဖတ်ရှုသင့်သူများ: ဘဝကို အကောင်းမြင်စိတ်ဖြင့် အသစ်တဖန် ပြောင်းလဲလိုသူတိုင်း ဖတ်ရှုသင့်ပါသည်။`,
-        previewText_en: `Master self-love, conquer inner resistance, and elevate your personal frequency for true fulfillment.
-
-🌟 Key Highlights:
-• Raising emotional frequency from lower vibes to gratitude and joy.
-• Curating positive, encouraging relationships and environments.
-• The power of intentional solitude and confident body language.`
+        previewText: `ကိုယ့်ရဲ့ အတွင်းစိတ် တုန်ခါမှု (Vibration & Frequency) ကို မြှင့်တင်ပြီး ပိုမိုကောင်းမွန်သော ဘဝကို ပိုင်ဆိုင်နိုင်စေမည့် စာအုပ် ဖြစ်ပါသည်။`,
+        previewText_en: `Master self-love and elevate your personal frequency for true fulfillment.`
     },
     {
         id: 9,
@@ -183,20 +132,8 @@ const booksData = [
         category: "horror",
         price: 3500,
         cover: "images/9.jpg",
-        previewText: `အင်းစိန်ထောင်အတွင်း နိုင်ငံရေးအကျဉ်းသားတစ်ဦးအဖြစ် ဖြတ်သန်းခဲ့ရစဉ် ကြုံတွေ့ခဲ့ရသော ထိတ်လန့်ချောက်ချားဖွယ် ပရလောက ကိုယ်တွေ့ဖြစ်ရပ်မှန်များ ဖြစ်ပါသည်။
-
-🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
-• အင်းစိန်ထောင် မိန်းဂျေးလ်လမ်းမကြီး၏ မူဆန်းသော စည်းမျဉ်းများနှင့် ကင်းမျှော်စင် အငွေ့အသက်များ။
-• နေရာအခက်အခဲကြောင့် သေဒဏ်ကျ ကြိုးတိုက် (Death Row) သို့ စတင် ပို့ဆောင်ခံရစဉ် ခံစားခဲ့ရသော ထိတ်လန့်ဖွယ် စိတ်ခံစားမှု။
-• အကျဉ်းသားများ အချင်းချင်းကြား ပြောစမှတ်ပြုခဲ့သည့် ထောင်တွင်း ပရလောက ဖြစ်ရပ်ဆိုးများ။
-
-💡 ဖတ်ရှုသင့်သူများ: ထောင်တွင်းသမိုင်းနောက်ခံနှင့် သည်းထိတ်ရင်ဖို ပရလောက ဖြစ်ရပ်မှန်များကို စိတ်ဝင်စားသူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `Chilling firsthand memoirs and supernatural occurrences inside the walls of Insein Prison.
-
-🌟 Key Highlights:
-• Strict prison lore surrounding the Main Jail avenue and watchtowers.
-• The haunting tension of being transferred into Death Row cell blocks.
-• Real-life supernatural encounters documented from behind bars.`
+        previewText: `အင်းစိန်ထောင်အတွင်း နိုင်ငံရေးအကျဉ်းသားတစ်ဦးအဖြစ် ဖြတ်သန်းခဲ့ရစဉ် ကြုံတွေ့ခဲ့ရသော ထိတ်လန့်ချောက်ချားဖွယ် ပရလောက ကိုယ်တွေ့ဖြစ်ရပ်မှန်များ ဖြစ်ပါသည်။`,
+        previewText_en: `Chilling firsthand memoirs and supernatural occurrences inside Insein Prison.`
     },
     {
         id: 10,
@@ -207,18 +144,8 @@ const booksData = [
         category: "drama",
         price: 3500,
         cover: "images/10.jpg",
-        previewText: `ကပ်ရောဂါနှင့် စီးပွားရေး အကျပ်အတည်းများကြားတွင် မိသားစုအတွက် ရုန်းကန်နေရသော အမျိုးသမီးနှစ်ဦး၏ သံယောဇဉ်နှင့် စွန့်လွှတ်စွန့်စားမှု ဒရာမာဝတ္ထု ဖြစ်ပါသည်။
-
-🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
-• ကိုယ်ဝန်ဆောင် အိဆွေနှင့် သူမ၏ သူငယ်ချင်း ရဲတို့ကြားမှ ခိုင်မာသော သံယောဇဉ်နှင့် ကတိစကားများ။
-• ကပ်ရောဂါကာလအတွင်း ဆင်းရဲနွမ်းပါးသူများ၏ ခက်ခဲကြမ်းတမ်းလှသော လူမှုဘဝ ရုန်းကန်ရမှုများ။
-• "ဒီကမ္ဘာကြီးက အရာရှိတွေရဲ့ ကမ္ဘာပါ... ငါတို့လို သာမန်လူတွေအတွက် နေရာမရှိဘူး" ဟူသော ဆွေးမြည့်ဖွယ် ဘဝအမြင်။
-
-💡 ဖတ်ရှုသင့်သူများ: ခေတ်ကာလ၏ အမှန်တရားနှင့် လူမှုဘဝ ရသဝတ္ထုများကို နှစ်သက်သူများအတွက် အထူးကောင်းမွန်ပါသည်။`,
-        previewText_en: `A gripping suburban drama exploring sacrifice, survival, and maternal bonds in difficult economic times.
-
-🌟 Key Highlights:
-• The poignant relationship and practical solidarity between struggling women.`
+        previewText: `ကပ်ရောဂါနှင့် စီးပွားရေး အကျပ်အတည်းများကြားတွင် မိသားစုအတွက် ရုန်းကန်နေရသော အမျိုးသမီးနှစ်ဦး၏ သံယောဇဉ် ဒရာမာဝတ္ထု ဖြစ်ပါသည်။`,
+        previewText_en: `A gripping suburban drama exploring sacrifice, survival, and maternal bonds.`
     },
     {
         id: 11,
@@ -229,15 +156,8 @@ const booksData = [
         category: "horror",
         price: 3500,
         cover: "images/11.jpg",
-        previewText: `မိုးသက်မုန်တိုင်းကြား မိခင်ဖြစ်သူ ရေနစ်သေဆုံးသွားခဲ့သည့် အတိတ်ဆိုးနှင့် နှစ်ပေါင်းများစွာကြာမှ ပေါ်ထွက်လာသော တရားခံအစစ်၏ သည်းထိတ်ရင်ဖို ဝတ္ထု ဖြစ်ပါသည်။
-
-🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
-• မိုးသက်မုန်တိုင်းနှင့် ရေကန်ထဲတွင် အသက်မဲ့စွာ လဲလျောင်းနေသော မိခင်ကို ကယ်တင်ရန် ကြိုးစားခဲ့သည့် ထိတ်လန့်ဖွယ် ညဉ့်နက်ပိုင်း။
-• နှစ်ပေါင်းများစွာကြာပြီးနောက် စုံထောက်တစ်ဦးမှ ဖော်ထုတ်ပေးလိုက်သော မထင်မှတ်ထားသည့် အမှုမှန်။
-• အချစ်လွန်ကဲရာမှ သံသရာလည်လာသော သံသယစိတ်နှင့် လူသတ်မှု၏ ကြောက်မက်ဖွယ် အဆုံးသတ်။
-
-💡 ဖတ်ရှုသင့်သူများ: လျှို့ဝှက်သည်းထိတ်ရင်ဖို (Mystery Thriller) ဇာတ်လမ်းကြိုက်သူများ လက်မလွှတ်သင့်သော စာအုပ် ဖြစ်ပါသည်။`,
-        previewText_en: `A chilling supernatural mystery of a daughter haunted by her mother's drowning and the dark truth discovered years later.`
+        previewText: `မိုးသက်မုန်တိုင်းကြား မိခင်ဖြစ်သူ ရေနစ်သေဆုံးသွားခဲ့သည့် အတိတ်ဆိုးနှင့် နှစ်ပေါင်းများစွာကြာမှ ပေါ်ထွက်လာသော တရားခံအစစ်၏ သည်းထိတ်ရင်ဖို ဝတ္ထု ဖြစ်ပါသည်။`,
+        previewText_en: `A chilling supernatural mystery surrounding a dark family truth.`
     },
     {
         id: 12,
@@ -248,15 +168,8 @@ const booksData = [
         category: "horror",
         price: 3500,
         cover: "images/12.jpg",
-        previewText: `မီးတောက်မီးလျှံများ ဝန်းရံနေသည့် အိပ်မက်ဆိုးတစ်ခုမှ စတင်ကာ ဘေးအိမ်မှ ထူးဆန်းထိတ်လန့်ဖွယ် ဖြစ်ရပ်ဆိုးများနှင့် ရင်ဆိုင်ရသော ဇာတ်လမ်း ဖြစ်ပါသည်။
-
-🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
-• မီးခိုးငွေ့များနှင့် လောင်ကျွမ်းသံများကြားမှ သေလုမျောပါး လန့်နိုးလာရသည့် အလွန်လက်တွေ့ဆန်သော အိပ်မက်ဆိုး။
-• အေးချမ်းလှသော မနက်ခင်း နံနက်စာ စားပွဲကြားတွင်ပင် ဖျောက်ဖျက်မရသည့် စိုးရိမ်တုန်လှုပ်ဖွယ် စိတ်ခံစားမှု။
-• ဘေးအိမ်မှ တိတ်တဆိတ် စတင်လာသော ပရလောက၏ ထူးဆန်းသော သတိပေးချက်များ။
-
-💡 ဖတ်ရှုသင့်သူများ: အိမ်နီးချင်း ပရလောက ထိတ်လန့်ဖွယ် ဇာတ်လမ်းများကို ဖတ်ရှုလိုသူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `Terrifying nightmares of being trapped in roaring flames foretell eerie supernatural occurrences next door.`
+        previewText: `မီးတောက်မီးလျှံများ ဝန်းရံနေသည့် အိပ်မက်ဆိုးတစ်ခုမှ စတင်ကာ ဘေးအိမ်မှ ထူးဆန်းထိတ်လန့်ဖွယ် ဖြစ်ရပ်ဆိုးများနှင့် ရင်ဆိုင်ရသော ဇာတ်လမ်း ဖြစ်ပါသည်။`,
+        previewText_en: `Terrifying nightmares foretell eerie supernatural occurrences next door.`
     },
     {
         id: 13,
@@ -267,15 +180,8 @@ const booksData = [
         category: "horror",
         price: 3500,
         cover: "images/13.jpg",
-        previewText: `အင်းဝနေပြည်တော်ခေတ် သမိုင်းဝင် အကျဉ်းသားတစ်ဦးနှင့် နှစ်ပေါင်းရာနှင့်ချီ ဆက်စပ်နေသော ပဟေဠိဆန်သည့် နန်းတွင်း ကျိန်စာဝတ္ထု ဖြစ်ပါသည်။
-
-🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
-• သက္ကရာဇ် ၈၈၀ ပြည့်နှစ် အင်းဝခေတ် ဧရာဝတီမြစ်ကမ်းဘေး မီးတောက်များကြားမှ စတင်ခဲ့သော သမိုင်းဝင် ပဟေဠိ။
-• ဖခင်ကို တစ်ခါမျှ မမြင်ဖူးဘဲ ကြီးပြင်းလာသည့် ရိုးသားသော ရွာသား မောင်သုတထံ ရောက်လာသည့် နန်းတွင်းဖိတ်ခေါ်မှု။
-• နေပြည်တော်သို့ ရောက်ရှိချိန်တွင် တဖြည်းဖြည်း ပေါ်ပေါက်လာသော ရှေးဟောင်း လျှို့ဝှက်ဆန်းကြယ် ကံကြမ္မာများ။
-
-💡 ဖတ်ရှုသင့်သူများ: သမိုင်းနောက်ခံ ရှေးဟောင်း လျှို့ဝှက်ဆန်းကြယ် ဇာတ်လမ်းများကို မြတ်နိုးသူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `Historical occult intrigue spanning centuries from the ancient Kingdom of Inwa.`
+        previewText: `အင်းဝနေပြည်တော်ခေတ် သမိုင်းဝင် အကျဉ်းသားတစ်ဦးနှင့် နှစ်ပေါင်းရာနှင့်ချီ ဆက်စပ်နေသော ပဟေဠိဆန်သည့် နန်းတွင်း ကျိန်စာဝတ္ထု ဖြစ်ပါသည်။`,
+        previewText_en: `Historical occult intrigue spanning centuries from ancient Inwa.`
     },
     {
         id: 14,
@@ -286,15 +192,8 @@ const booksData = [
         category: "humor",
         price: 3000,
         cover: "images/14.jpg",
-        previewText: `အထက်အညာ ကျေးလက်ဒေသရှိ ရိုးရှင်းဖြူစင်သော ရွာသူရွာသားများ၏ ပျော်ရွှင်ဖွယ် အလွဲများနှင့် ရယ်ရွှင်ဖွယ် ဟာသဇာတ်လမ်းတိုများ ဖြစ်ပါသည်။
-
-🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
-• တန်ဆောင်မုန်း ဘုရားပွဲတော်နှင့် ဘောလုံးပွဲ အငြင်းပွားမှုကို ရွာ့ဟာသဉာဏ်ကြီးရှင် မောင်အေးက ဉာဏ်ပညာရှိစွာ ညှိနှိုင်းပေးပုံ။
-• မနက်ပိုင်း ကုသိုလ်ယူ၊ နေ့လယ် ဘောလုံးပွဲ အားပေးပြီး ညဘက် ဇာတ်ပွဲကြည့်ကာ တစ်ရွာလုံး စည်းလုံးပျော်ရွှင်သွားကြပုံ။
-• ကျေးလက်ဒေသ၏ ပကတိ ရိုးသားကြည်လင်သော ရယ်မောစရာ အငွေ့အသက်များ။
-
-💡 ဖတ်ရှုသင့်သူများ: စိတ်လက်ပေါ့ပါးပြီး အမောပြေ ရယ်မောလိုသူတိုင်း ဖတ်ရှုသင့်သော ဟာသစာအုပ် ဖြစ်ပါသည်။`,
-        previewText_en: `A lively collection of warm-hearted and witty humorous tales from rural upper Myanmar.`
+        previewText: `အထက်အညာ ကျေးလက်ဒေသရှိ ရိုးရှင်းဖြူစင်သော ရွာသူရွာသားများ၏ ပျော်ရွှင်ဖွယ် အလွဲများနှင့် ဟာသဇာတ်လမ်းတိုများ ဖြစ်ပါသည်။`,
+        previewText_en: `A lively collection of warm-hearted humorous tales from rural Myanmar.`
     },
     {
         id: 15,
@@ -305,15 +204,8 @@ const booksData = [
         category: "humor",
         price: 3500,
         cover: "images/15.jpg",
-        previewText: `ရုပ်ရှင်ရိုက်ကွင်း နောက်ကွယ်က တကယ့်အလွဲများနှင့် ကင်မရာရှေ့ ဒရာမာ ဝမ်းနည်းခန်းများကြားမှ ရယ်မောစရာ ဖြစ်ရပ်မှန် အမှတ်တရများ ဖြစ်ပါသည်။
-
-🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
-• "ဖြတ် (Cut)" ဟု အော်လိုက်သည်နှင့် မျက်ရည်များ ပျောက်ကွယ်သွားကာ အားရပါးရ ရယ်မောကြသည့် ရိုက်ကွင်းမြင်ကွင်းများ။
-• မျက်လုံးထဲ ဖုန်ဝင်သွား၍ မျက်ရည်ထွက်ကာ ဇာတ်ဝင်ခန်း ဆက်ရိုက်ခဲ့ရသည့် အလွဲများ။
-• စကားလုံးများ မှားယွင်းရောထွေးရင်း ရိုက်ကူးရေး တစ်ဖွဲ့လုံး အူတက်အောင် ရယ်ခဲ့ရသည့် အမှတ်တရများ။
-
-💡 ဖတ်ရှုသင့်သူများ: စာရေးဆရာ နီကိုရဲ၏ ပြောင်မြောက်သော ဟာသအရေးအသားများကို နှစ်သက်သူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `Brilliant comedic behind-the-scenes memoirs from Myanmar film production sets by Niko Ye.`
+        previewText: `ရုပ်ရှင်ရိုက်ကွင်း နောက်ကွယ်က တကယ့်အလွဲများနှင့် ကင်မရာရှေ့ ဒရာမာ ဝမ်းနည်းခန်းများကြားမှ ရယ်မောစရာ ဖြစ်ရပ်မှန် အမှတ်တရများ ဖြစ်ပါသည်။`,
+        previewText_en: `Brilliant comedic behind-the-scenes filmmaking memoirs by Niko Ye.`
     },
     {
         id: 16,
@@ -324,15 +216,8 @@ const booksData = [
         category: "romance",
         price: 3500,
         cover: "images/16.jpg",
-        previewText: `မင်းထက် ပြည့်စုံသူတွေ ရှိနိုင်ပေမယ့် မင်းကိုသာ ရွေးချယ်ခဲ့သည့် စစ်မှန်သော ချစ်ခြင်းနှင့် နေကြာပန်းဝါလေးများ၏ အဓိပ္ပာယ်ကို ဖော်ကျူးထားသော အချစ်ဝတ္ထု ဖြစ်ပါသည်။
-
-🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
-• "မင်းက နေ့ရောညပါ အမြဲတည်ရှိနေတဲ့ ငါ့ရဲ့ ပျော်ရွှင်ခြင်းလေးပါ" ဟူသော ချစ်ခြင်း၏ ဝန်ခံချက်။
-• စိတ်ထဲ ပူပန်မှုများ လျော့ကျစေရန် အကောင်းမြင်စိတ် မွေးမြူနည်းနှင့် နူးညံ့သိမ်မွေ့သော သဘာဝတရား အလှတရားများ။
-• ပိုင်ဆိုင်လိုစိတ် ကင်းစင်စွာဖြင့် ချစ်ရသူ အမြဲ ပျော်ရွှင်စေရန် ဆုတောင်းပေးသည့် အဝါရောင် ပန်းပွင့်လေးများ၏ မေတ္တာ။
-
-💡 ဖတ်ရှုသင့်သူများ: နူးညံ့ပြီး စိတ်ကို အေးချမ်းစေမည့် အချစ်ဝတ္ထုတိုများကို နှစ်သက်သူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `A gentle poetic romance of unconditional affection, personal healing, and sunflower-like devotion.`
+        previewText: `မင်းထက် ပြည့်စုံသူတွေ ရှိနိုင်ပေမယ့် မင်းကိုသာ ရွေးချယ်ခဲ့သည့် စစ်မှန်သော ချစ်ခြင်းနှင့် နေကြာပန်းဝါလေးများ၏ အဓိပ္ပာယ်ကို ဖော်ကျူးထားသော အချစ်ဝတ္ထု ဖြစ်ပါသည်။`,
+        previewText_en: `A gentle poetic romance of unconditional affection and sunflower warmth.`
     },
     {
         id: 17,
@@ -343,15 +228,8 @@ const booksData = [
         category: "romance",
         price: 3500,
         cover: "images/17.jpg",
-        previewText: `ဂုဏ်ဒြပ်နှင့် ပကာသနများကို တံခါးဝတွင် ထားခဲ့ကာ စိတ်၏ စင်ကြယ်အေးချမ်းမှုနှင့် တိတ်ဆိတ်ခြင်းကို ခံစားစေမည့် ကဗျာရသ စာအုပ် ဖြစ်ပါသည်။
-
-🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
-• "စိတ်နှလုံး အေးချမ်းခြင်းဆိုတာ စိတ်ရဲ့ သန့်ရှင်းခြင်းက စတင်ပါသည်" ဟူသော အတွေးအမြင်များ။
-• မနက်ခင်း နေခြည်နွေးနွေးနှင့် သစ်ရွက်ခြောက်လေးများ၏ ရိုးရှင်းသော သဘာဝ အလှတရား။
-• လောကကြီးတွင် ဘယ်သူနှင့်မျှ ပြိုင်ဆိုင်နေစရာ မလိုဘဲ စိတ်ငြိမ်းချမ်းမှုကို ရယူနည်းများ။
-
-💡 ဖတ်ရှုသင့်သူများ: လောက၏ ရှုပ်ထွေးမှုများမှ ခေတ္တခွာပြီး စိတ်နှလုံး အနားယူလိုသူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `Reflective mindfulness poetry celebrating solitude, quiet simplicity, and authentic contentment.`
+        previewText: `ဂုဏ်ဒြပ်နှင့် ပကာသနများကို တံခါးဝတွင် ထားခဲ့ကာ စိတ်၏ စင်ကြယ်အေးချမ်းမှုနှင့် တိတ်ဆိတ်ခြင်းကို ခံစားစေမည့် ကဗျာရသ စာအုပ် ဖြစ်ပါသည်။`,
+        previewText_en: `Reflective mindfulness poetry celebrating solitude and quiet simplicity.`
     },
     {
         id: 18,
@@ -362,15 +240,8 @@ const booksData = [
         category: "romance",
         price: 3500,
         cover: "images/18.jpg",
-        previewText: `ချစ်ခြင်းမေတ္တာနှင့် ကာရံညီသော ကတိစကားများ၊ စစ်မှန်သော ၅၂၈ မေတ္တာနှင့် အချစ်ကဗျာ စကားပြေ ရသစာအုပ် ဖြစ်ပါသည်။
-
-🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
-• "ယုံကြည်မှုတွေကို ကတိတွေနဲ့ မတည်ဆောက်ဘဲ နွေးထွေးမှုတွေနဲ့ တည်ဆောက်ကြမယ်" ဟူသော ချိုမြိန်သည့် ခံယူချက်။
-• မနက်ဖြန်တွေ ရှိနေသရွေ့ မပြောင်းလဲဘဲ ချစ်နေမည့် တစ်ဘဝစာ ချစ်ခြင်းမေတ္တာ။
-• အတိတ်က ဒဏ်ရာများကို ဖေးမထွေးပွေ့ပြီး နေ့ရက်တိုင်းကို ချစ်သူများနေ့အဖြစ် ဖြတ်သန်းပုံ။
-
-💡 ဖတ်ရှုသင့်သူများ: ရိုမန်းတစ်ဆန်သော အချစ်ကဗျာများနှင့် စကားပြေများကို မြတ်နိုးသူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `An intimate and touching collection of romantic poetry and tender love letters.`
+        previewText: `ချစ်ခြင်းမေတ္တာနှင့် ကာရံညီသော ကတိစကားများ၊ စစ်မှန်သော ၅၂၈ မေတ္တာနှင့် အချစ်ကဗျာ စကားပြေ ရသစာအုပ် ဖြစ်ပါသည်။`,
+        previewText_en: `An intimate and touching collection of romantic poetry and love letters.`
     },
     {
         id: 19,
@@ -381,19 +252,14 @@ const booksData = [
         category: "romance",
         price: 3500,
         cover: "images/19.jpg",
-        previewText: `ဆောင်းရာသီ၏ အေးစက်သော နေ့ရက်များကြားတွင် စိတ်နှလုံးကို နွေးထွေးစေမည့် အမှတ်တရများနှင့် အဖော်မွန် ရသဝတ္ထု ဖြစ်ပါသည်။
-
-🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
-• ဆောင်းလေအေးများကြားတွင် ကော်ဖီနွေးနွေးတစ်ခွက်နှင့်အတူ ခံစားရသော အေးချမ်းသည့် မနက်ခင်းများ။
-• ကိုယ့်ကို အမှန်တကယ် နားလည်ပေးမည့် လူတစ်ယောက်နှင့်အတူ ဘဝကို ရိုးရှင်းစွာ ဖြတ်သန်းပုံ။
-• လောကကြီးတွင် အမြဲ အလောတကြီး မဖြစ်ဘဲ သာယာသော နေ့ရက်များကို ဖန်တီးနည်း။
-
-💡 ဖတ်ရှုသင့်သူများ: စိတ်ကို နွေးထွေးအေးချမ်းစေမည့် ဝတ္ထုတိုလေးများကို ဖတ်ရှုလိုသူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `A heartwarming novella highlighting quiet companionship, winter warmth, and peaceful days.`
+        previewText: `ဆောင်းရာသီ၏ အေးစက်သော နေ့ရက်များကြားတွင် စိတ်နှလုံးကို နွေးထွေးစေမည့် အမှတ်တရများနှင့် အဖော်မွန် ရသဝတ္ထု ဖြစ်ပါသည်။`,
+        previewText_en: `A heartwarming novella highlighting companionship and peaceful winter days.`
     }
 ];
 
-// Dictionary for Full UI Translation
+let booksData = JSON.parse(localStorage.getItem("custom_books_data")) || defaultBooksData;
+
+// Translation Dictionary
 const translations = {
     my: {
         brand: "📚 Myanmar Bookstore",
@@ -426,7 +292,8 @@ const translations = {
         loginSubmitBtn: "Login ဝင်မည်",
         regSubmitBtn: "အကောင့်သစ် ဖွင့်မည်",
         successModalTitle: "အော်ဒါတင်ခြင်း အောင်မြင်ပါသည်!",
-        successModalSub: "သင့်စာအုပ်များကို အမြန်ဆုံး အိမ်တိုင်ရာရောက် ပို့ဆောင်ပေးပါမည်။"
+        successModalSub: "သင့်စာအုပ်များကို အမြန်ဆုံး အိမ်တိုင်ရာရောက် ပို့ဆောင်ပေးပါမည်။",
+        successDoneBtn: "အောင်မြင်ပါသည်"
     },
     en: {
         brand: "📚 Myanmar Bookstore",
@@ -459,7 +326,8 @@ const translations = {
         loginSubmitBtn: "Login",
         regSubmitBtn: "Create Account",
         successModalTitle: "Order Placed Successfully!",
-        successModalSub: "Your books will be delivered directly to your doorstep."
+        successModalSub: "Your books will be delivered directly to your doorstep.",
+        successDoneBtn: "Done / Success"
     }
 };
 
@@ -480,7 +348,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ==========================================
-// Authentication
+// Authentication & Role-Based Access Control
 // ==========================================
 function openAuthModal() {
     document.getElementById("auth-modal").style.display = "block";
@@ -510,6 +378,10 @@ function handleRegister(e) {
     const username = document.getElementById("reg-username").value.trim();
     const password = document.getElementById("reg-password").value;
 
+    if (username.toLowerCase() === "admin") {
+        return alert(currentLang === 'my' ? "'admin' အမည်ဖြင့် အကောင့်ဖွင့်၍ မရပါ။" : "Cannot register with username 'admin'.");
+    }
+
     const users = JSON.parse(localStorage.getItem("bookstore_users")) || [];
     const exists = users.find(u => u.username.toLowerCase() === username.toLowerCase());
 
@@ -530,11 +402,22 @@ function handleLogin(e) {
     const username = document.getElementById("login-username").value.trim();
     const password = document.getElementById("login-password").value;
 
+    // Admin Verification
+    if (username.toLowerCase() === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
+        currentUser = { username: "Admin", role: "admin" };
+        localStorage.setItem("current_user", JSON.stringify(currentUser));
+        updateAuthUI();
+        closeModal("auth-modal");
+        alert(currentLang === 'my' ? "Admin အဖြစ် အောင်မြင်စွာ ဝင်ရောက်ပြီးပါပြီ။" : "Logged in as Administrator.");
+        return;
+    }
+
+    // Customer User Verification
     const users = JSON.parse(localStorage.getItem("bookstore_users")) || [];
     const user = users.find(u => u.username.toLowerCase() === username.toLowerCase() && u.password === password);
 
     if (user) {
-        currentUser = { username: user.username };
+        currentUser = { username: user.username, role: "user" };
         localStorage.setItem("current_user", JSON.stringify(currentUser));
         updateAuthUI();
         closeModal("auth-modal");
@@ -553,6 +436,8 @@ function handleLogout() {
 
 function updateAuthUI() {
     const authNav = document.getElementById("auth-nav-container");
+    const adminBtn = document.getElementById("admin-nav-btn");
+
     if (currentUser) {
         authNav.innerHTML = `
             <div class="user-badge">
@@ -560,8 +445,15 @@ function updateAuthUI() {
                 <span class="logout-link" onclick="handleLogout()">Logout</span>
             </div>
         `;
+
+        if (currentUser.role === "admin") {
+            if (adminBtn) adminBtn.style.display = "inline-block";
+        } else {
+            if (adminBtn) adminBtn.style.display = "none";
+        }
     } else {
         authNav.innerHTML = `<button class="nav-btn auth-btn" onclick="openAuthModal()" id="login-nav-btn">${translations[currentLang].loginBtn}</button>`;
+        if (adminBtn) adminBtn.style.display = "none";
     }
 }
 
@@ -632,7 +524,7 @@ function handleSearch() {
 }
 
 // ==========================================
-// E-Reader Logic (Phone & PC Optimized)
+// E-Reader Logic (Phone & PC Responsive)
 // ==========================================
 function openReader(bookId) {
     const book = booksData.find(b => b.id === bookId);
@@ -669,9 +561,11 @@ function adjustReaderFont(delta) {
 }
 
 // ==========================================
-// Telegram Notification Function
+// Telegram Notification
 // ==========================================
 function sendOrderToTelegram(order, items) {
+    if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) return;
+
     const itemsText = items.map(i => `• ${i.title} (${i.qty} အုပ်) - ${(i.price * i.qty).toLocaleString()} MMK`).join('\n');
     
     const message = `
@@ -698,11 +592,11 @@ ${itemsText}
             text: message,
             parse_mode: "Markdown"
         })
-    }).catch(err => console.error("Telegram notification error:", err));
+    }).catch(err => console.error("Telegram error:", err));
 }
 
 // ==========================================
-// Shopping Cart & Cash on Delivery Checkout
+// Shopping Cart & Checkout
 // ==========================================
 function addToCart(bookId) {
     const book = booksData.find(b => b.id === bookId);
@@ -785,6 +679,7 @@ function handleCheckout(e) {
         phone: cleanPhone,
         address: address,
         paymentMethod: "Cash on Delivery (အိမ်ရောက်ငွေချေ)",
+        status: "Pending",
         items: [...cart],
         total: totalAmount,
         date: orderDate
@@ -795,8 +690,6 @@ function handleCheckout(e) {
     localStorage.setItem("admin_orders", JSON.stringify(orders));
 
     const orderedItems = [...cart];
-    
-    // Telegram သို့ အော်ဒါအချက်အလက် ပို့ခြင်း
     sendOrderToTelegram(order, orderedItems);
 
     cart = [];
@@ -834,25 +727,136 @@ function showOrderSuccess(order, items) {
 }
 
 // ==========================================
-// Admin Orders Dashboard
+// Admin Dashboard Logic
 // ==========================================
 function openAdmin() {
-    const orders = JSON.parse(localStorage.getItem("admin_orders")) || [];
-    const list = document.getElementById("admin-orders-list");
-    list.innerHTML = orders.length === 0 ? "<p>လက်ရှိတွင် အော်ဒါမှတ်တမ်း မရှိသေးပါ။</p>" : orders.slice().reverse().map(o => `
-        <div style="border:1px solid var(--border-color); padding:14px; margin-bottom:12px; border-radius:8px; background-color: var(--card-bg);">
-            <div style="display:flex; justify-content:space-between; margin-bottom: 6px;">
-                <strong style="color: #0d6efd;">Order ID: ${o.id}</strong>
-                <span style="font-size:0.8rem; color:#888;">${o.date}</span>
-            </div>
-            <p><strong>ဝယ်ယူသူ:</strong> ${o.customerName} (ဖုန်း - ${o.phone})</p>
-            <p><strong>လိပ်စာ:</strong> ${o.address || 'မရှိပါ'}</p>
-            <p><strong>ငွေပေးချေမှု:</strong> <span style="color:#198754; font-weight:bold;">${o.paymentMethod || 'COD'}</span></p>
-            <p><strong>စာအုပ်များ:</strong> ${o.items.map(i => `${i.title} (x${i.qty})`).join(', ')}</p>
-            <p style="margin-top:6px;"><strong>စုစုပေါင်း ကျသင့်ငွေ:</strong> <strong style="color:#dc3545;">${o.total.toLocaleString()} ကျပ်</strong></p>
-        </div>
-    `).join('');
+    if (!currentUser || currentUser.role !== "admin") {
+        alert(currentLang === 'my' ? "ဤနေရာကို Admin သာ ဝင်ရောက်ခွင့် ရှိပါသည်။ ကျေးဇူးပြု၍ Admin အကောင့်ဖြင့် Login အရင်ဝင်ပါ။" : "Access denied. Please login with an Admin account.");
+        return;
+    }
+    renderAdminOrders();
     document.getElementById("admin-modal").style.display = "block";
+}
+
+function switchAdminTab(tab) {
+    const ordersTab = document.getElementById("admin-orders-tab");
+    const addbookTab = document.getElementById("admin-addbook-tab");
+    const ordersTabBtn = document.getElementById("admin-tab-orders-btn");
+    const addbookTabBtn = document.getElementById("admin-tab-addbook-btn");
+
+    if (tab === 'orders') {
+        ordersTab.style.display = "block";
+        addbookTab.style.display = "none";
+        ordersTabBtn.classList.add("active");
+        addbookTabBtn.classList.remove("active");
+        renderAdminOrders();
+    } else {
+        ordersTab.style.display = "none";
+        addbookTab.style.display = "block";
+        ordersTabBtn.classList.remove("active");
+        addbookTabBtn.classList.add("active");
+    }
+}
+
+function renderAdminOrders() {
+    const orders = JSON.parse(localStorage.getItem("admin_orders")) || [];
+    document.getElementById("admin-orders-count").innerText = orders.length;
+    const list = document.getElementById("admin-orders-list");
+
+    list.innerHTML = orders.length === 0 ? 
+        `<div style="text-align:center; padding:30px; color:#888;">လက်ရှိတွင် အော်ဒါမှတ်တမ်း မရှိသေးပါ။</div>` : 
+        orders.slice().reverse().map((o, revIndex) => {
+            const actualIndex = orders.length - 1 - revIndex;
+            const isDelivered = o.status === "Delivered";
+            return `
+                <div class="admin-order-card">
+                    <div class="admin-order-header">
+                        <div>
+                            <strong style="color: #0d6efd; font-size:1rem;">#${o.id}</strong>
+                            <span class="order-status-badge ${isDelivered ? 'status-delivered' : 'status-pending'}">
+                                ${o.status || 'Pending'}
+                            </span>
+                        </div>
+                        <span style="font-size:0.8rem; color:#888;">${o.date}</span>
+                    </div>
+
+                    <div class="admin-order-body">
+                        <p><strong>ဝယ်ယူသူ:</strong> ${o.customerName} (📞 <strong>${o.phone}</strong>)</p>
+                        <p><strong>လိပ်စာ:</strong> ${o.address || 'မရှိပါ'}</p>
+                        <p><strong>ငွေပေးချေမှု:</strong> ${o.paymentMethod || 'COD'}</p>
+                        <p><strong>မှာယူထားသော စာအုပ်များ:</strong> ${o.items.map(i => `${i.title} (x${i.qty})`).join(', ')}</p>
+                        <p style="margin-top:6px; font-size:0.95rem;"><strong>စုစုပေါင်း ကျသင့်ငွေ:</strong> <strong style="color:#dc3545;">${o.total.toLocaleString()} MMK</strong></p>
+                    </div>
+
+                    <div class="admin-order-actions">
+                        <button class="status-toggle-btn" onclick="toggleOrderStatus(${actualIndex})">
+                            ${isDelivered ? '↩ Mark as Pending' : '✓ Mark as Delivered'}
+                        </button>
+                        <button class="delete-order-btn" onclick="deleteOrder(${actualIndex})">
+                            🗑 Delete
+                        </button>
+                    </div>
+                </div>
+            `;
+        }).join('');
+}
+
+function toggleOrderStatus(index) {
+    const orders = JSON.parse(localStorage.getItem("admin_orders")) || [];
+    if (orders[index]) {
+        orders[index].status = orders[index].status === "Delivered" ? "Pending" : "Delivered";
+        localStorage.setItem("admin_orders", JSON.stringify(orders));
+        renderAdminOrders();
+    }
+}
+
+function deleteOrder(index) {
+    if (confirm("ဤအော်ဒါကို အပြီးဖျက်လိုပါသလား?")) {
+        const orders = JSON.parse(localStorage.getItem("admin_orders")) || [];
+        orders.splice(index, 1);
+        localStorage.setItem("admin_orders", JSON.stringify(orders));
+        renderAdminOrders();
+    }
+}
+
+function clearAllOrders() {
+    if (confirm("အော်ဒါအားလုံးကို ရှင်းလင်းဖျက်ပစ်လိုပါသလား?")) {
+        localStorage.removeItem("admin_orders");
+        renderAdminOrders();
+    }
+}
+
+function handleAddNewBook(e) {
+    e.preventDefault();
+    const title = document.getElementById("new-book-title").value.trim();
+    const title_en = document.getElementById("new-book-title-en").value.trim();
+    const author = document.getElementById("new-book-author").value.trim();
+    const author_en = document.getElementById("new-book-author-en").value.trim();
+    const category = document.getElementById("new-book-category").value;
+    const price = parseInt(document.getElementById("new-book-price").value);
+    const cover = document.getElementById("new-book-cover").value.trim();
+    const preview = document.getElementById("new-book-preview").value.trim();
+
+    const newBook = {
+        id: Date.now(),
+        title,
+        title_en,
+        author,
+        author_en,
+        category,
+        price,
+        cover,
+        previewText: preview,
+        previewText_en: preview
+    };
+
+    booksData.unshift(newBook);
+    localStorage.setItem("custom_books_data", JSON.stringify(booksData));
+
+    alert("စာအုပ်အသစ် ထည့်သွင်းခြင်း အောင်မြင်ပါသည်။");
+    document.getElementById("admin-addbook-form").reset();
+    renderAllShelves();
+    switchAdminTab('orders');
 }
 
 // ==========================================
@@ -891,7 +895,6 @@ function updateLanguageUI() {
     document.getElementById("title-humor").innerText = t.titleHumor;
     document.getElementById("title-romance").innerText = t.titleRomance;
 
-    // Checkout Modal Texts
     document.getElementById("cart-modal-title").innerText = t.cartModalTitle;
     document.getElementById("cart-modal-subtitle").innerText = t.cartModalSubtitle;
     document.getElementById("order-summary-title").innerText = t.orderSummaryTitle;
@@ -903,11 +906,11 @@ function updateLanguageUI() {
     document.getElementById("payment-badge-text").innerText = t.paymentBadgeText;
     document.getElementById("confirm-order-btn").innerText = t.confirmOrderBtn;
 
-    // Auth & Success Modal
     document.getElementById("tab-login-btn").innerText = t.tabLogin;
     document.getElementById("tab-register-btn").innerText = t.tabRegister;
     document.getElementById("login-submit-btn").innerText = t.loginSubmitBtn;
     document.getElementById("reg-submit-btn").innerText = t.regSubmitBtn;
     document.getElementById("success-modal-title").innerText = t.successModalTitle;
     document.getElementById("success-modal-sub").innerText = t.successModalSub;
+    document.getElementById("success-done-btn").innerText = t.successDoneBtn;
 }
