@@ -5,25 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Myanmar Online Bookstore & E-Reader</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Navbar -->
     <header class="header">
-        <div class="brand">📚 Myanmar Bookstore</div>
+        <div class="brand" id="nav-brand">📚 Myanmar Bookstore</div>
         <div class="header-controls">
             <input type="text" id="search-input" placeholder="စာအုပ်ရှာဖွေရန်..." oninput="handleSearch()">
             <button class="nav-btn" onclick="toggleLanguage()" id="lang-btn">EN</button>
-            <button class="nav-btn" onclick="toggleTheme()">🌓 Theme</button>
-            <button class="nav-btn cart-btn" onclick="openCart()">
+            <button class="nav-btn" onclick="toggleTheme()" id="theme-btn">🌓 Theme</button>
+            <button class="nav-btn cart-btn" onclick="openCart()" id="cart-nav-btn">
                 🛒 Cart (<span id="cart-count">0</span>)
             </button>
             
-            <!-- Dynamic Auth Button / User Profile -->
             <div id="auth-nav-container">
-                <button class="nav-btn auth-btn" onclick="openAuthModal()">👤 Login</button>
+                <button class="nav-btn auth-btn" onclick="openAuthModal()" id="login-nav-btn">👤 Login</button>
             </div>
 
-            <button class="nav-btn" onclick="openAdmin()">⚙️ Admin</button>
+            <button class="nav-btn" onclick="openAdmin()" id="admin-nav-btn">⚙️ Admin</button>
         </div>
     </header>
 
@@ -31,45 +31,60 @@
     <main class="main-container">
         <!-- Search Results -->
         <section id="search-results-section" style="display: none;" class="shelf-section">
-            <h2 class="shelf-title">🔍 ရှာဖွေတွေ့ရှိသော စာအုပ်များ</h2>
+            <h2 class="shelf-title" id="title-search">🔍 ရှာဖွေတွေ့ရှိသော စာအုပ်များ</h2>
             <div class="bookshelf" id="search-results-list"></div>
         </section>
 
         <!-- Default Bookshelves by Category -->
         <div id="default-shelves">
             <section class="shelf-section">
-                <h2 class="shelf-title">💻 နည်းပညာ (Technical)</h2>
+                <h2 class="shelf-title" id="title-tech">💻 နည်းပညာ (Technical)</h2>
                 <div class="bookshelf" id="shelf-tech"></div>
             </section>
 
             <section class="shelf-section">
-                <h2 class="shelf-title">🌿 ကျန်းမာရေးနှင့် အတွေးအမြင် (Health & Mindset)</h2>
+                <h2 class="shelf-title" id="title-health">🌿 ကျန်းမာရေးနှင့် အတွေးအမြင် (Health & Mindset)</h2>
                 <div class="bookshelf" id="shelf-health"></div>
             </section>
 
             <section class="shelf-section">
-                <h2 class="shelf-title">👻 ထိတ်လန့်စရာနှင့် ပရလောက (Horror & Mystery)</h2>
+                <h2 class="shelf-title" id="title-horror">👻 ထိတ်လန့်စရာနှင့် ပရလောက (Horror & Mystery)</h2>
                 <div class="bookshelf" id="shelf-horror"></div>
             </section>
 
             <section class="shelf-section">
-                <h2 class="shelf-title">🎭 ဒရာမာနှင့် ရသဝတ္ထု (Drama & Fiction)</h2>
+                <h2 class="shelf-title" id="title-drama">🎭 ဒရာမာနှင့် ရသဝတ္ထု (Drama & Fiction)</h2>
                 <div class="bookshelf" id="shelf-drama"></div>
             </section>
 
             <section class="shelf-section">
-                <h2 class="shelf-title">😂 ဟာသနှင့် အပန်းဖြေ (Humor & Fun)</h2>
+                <h2 class="shelf-title" id="title-humor">😂 ဟာသနှင့် အပန်းဖြေ (Humor & Fun)</h2>
                 <div class="bookshelf" id="shelf-humor"></div>
             </section>
 
             <section class="shelf-section">
-                <h2 class="shelf-title">💖 အချစ်နှင့် ကဗျာ (Romance & Poetry)</h2>
+                <h2 class="shelf-title" id="title-romance">💖 အချစ်နှင့် ကဗျာ (Romance & Poetry)</h2>
                 <div class="bookshelf" id="shelf-romance"></div>
             </section>
         </div>
     </main>
 
-    <!-- Auth Modal (Login / Register) -->
+    <!-- E-Reader Modal (Phone & PC Responsive) -->
+    <div id="reader-modal" class="modal">
+        <div class="modal-content reader-modal-content">
+            <div class="reader-modal-header">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span class="reader-badge">📖 Preview</span>
+                    <button class="reader-font-btn" onclick="adjustReaderFont(-1)">A-</button>
+                    <button class="reader-font-btn" onclick="adjustReaderFont(1)">A+</button>
+                </div>
+                <span class="close-btn" onclick="closeModal('reader-modal')">&times;</span>
+            </div>
+            <div id="reader-container" class="reader-scroll-area"></div>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
     <div id="auth-modal" class="modal">
         <div class="modal-content auth-modal-content">
             <span class="close-btn" onclick="closeModal('auth-modal')">&times;</span>
@@ -78,45 +93,81 @@
                 <button id="tab-register-btn" class="tab-btn" onclick="switchAuthTab('register')">အကောင့်ဖွင့်ရန်</button>
             </div>
 
-            <!-- Login Form -->
             <form id="login-form" onsubmit="handleLogin(event)">
                 <input type="text" id="login-username" placeholder="Username (အမည်)" required class="form-input">
                 <input type="password" id="login-password" placeholder="Password (လျှို့ဝှက်နံပါတ်)" required class="form-input">
-                <button type="submit" class="submit-btn">Login ဝင်မည်</button>
+                <button type="submit" class="submit-btn" id="login-submit-btn">Login ဝင်မည်</button>
             </form>
 
-            <!-- Register Form -->
             <form id="register-form" style="display: none;" onsubmit="handleRegister(event)">
                 <input type="text" id="reg-username" placeholder="Username အသစ်" required class="form-input">
                 <input type="password" id="reg-password" placeholder="Password သတ်မှတ်ပါ" required class="form-input">
-                <button type="submit" class="submit-btn" style="background-color: #198754;">အကောင့်သစ် ဖွင့်မည်</button>
+                <button type="submit" class="submit-btn" style="background-color: #198754;" id="reg-submit-btn">အကောင့်သစ် ဖွင့်မည်</button>
             </form>
         </div>
     </div>
 
-    <!-- E-Reader Modal -->
-    <div id="reader-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('reader-modal')">&times;</span>
-            <div id="reader-container"></div>
-        </div>
-    </div>
-
-    <!-- Shopping Cart Modal -->
+    <!-- Shopping Cart & COD Modal -->
     <div id="cart-modal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content checkout-modal-content">
             <span class="close-btn" onclick="closeModal('cart-modal')">&times;</span>
-            <h2>🛒 Shopping Cart</h2>
-            <div id="cart-items" class="cart-items-list"></div>
-            <div class="cart-summary">
-                <p>စုစုပေါင်း: <strong id="cart-total-price">0</strong> ကျပ်</p>
+            <div class="checkout-header">
+                <h2>🛒 <span id="cart-modal-title">Shopping Cart & Checkout</span></h2>
+                <p class="checkout-subtitle" id="cart-modal-subtitle">အိမ်ရောက်ငွေချေစနစ်ဖြင့် လွယ်ကူလျင်မြန်စွာ မှာယူလိုက်ပါ</p>
             </div>
-            <hr class="divider">
-            <h3>KPay ဖြင့် အတည်ပြုဝယ်ယူရန်</h3>
-            <form id="checkout-form" onsubmit="handleCheckout(event)">
-                <input type="text" id="cust-phone" placeholder="KBZPay ဖုန်းနံပါတ် (09xxxxxxxxx)" required class="form-input">
-                <button type="submit" class="submit-btn">KPay ဖြင့် ငွေပေးချေမည်</button>
-            </form>
+
+            <div class="checkout-grid">
+                <div class="checkout-summary-box">
+                    <h3 id="order-summary-title">📦 မှာယူမည့် စာအုပ်များ</h3>
+                    <div id="cart-items" class="cart-items-list"></div>
+                    <div class="cart-summary-total">
+                        <span id="label-total-price">စုစုပေါင်း ကျသင့်ငွေ:</span>
+                        <strong id="cart-total-price" class="total-amount-highlight">0 MMK</strong>
+                    </div>
+                </div>
+
+                <div class="checkout-form-box">
+                    <h3 id="delivery-info-title">🚚 ပို့ဆောင်ရမည့် အချက်အလက်များ</h3>
+                    <form id="checkout-form" onsubmit="handleCheckout(event)">
+                        <div class="input-group">
+                            <label id="label-name">လက်ခံမည့်သူ အမည်</label>
+                            <input type="text" id="cust-name" placeholder="အမည် ရိုက်ထည့်ပါ" required class="form-input">
+                        </div>
+
+                        <div class="input-group">
+                            <label id="label-phone">ဆက်သွယ်ရမည့် ဖုန်းနံပါတ်</label>
+                            <input type="text" id="cust-phone" placeholder="09xxxxxxxxx" required class="form-input">
+                        </div>
+
+                        <div class="input-group">
+                            <label id="label-address">ပို့ဆောင်ပေးရမည့် လိပ်စာ အပြည့်အစုံ</label>
+                            <textarea id="cust-address" placeholder="အိမ်အမှတ်၊ လမ်း၊ ရပ်ကွက်၊ မြို့နယ်..." required class="form-input" rows="3"></textarea>
+                        </div>
+
+                        <div class="payment-badge">
+                            <i class="fa-solid fa-truck-ramp-box"></i>
+                            <span id="payment-badge-text">ငွေပေးချေမှု: အိမ်ရောက်ငွေချေ (Cash On Delivery)</span>
+                        </div>
+
+                        <button type="submit" class="submit-btn checkout-confirm-btn" id="confirm-order-btn">
+                            ✓ အော်ဒါ အတည်ပြု တင်မည်
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Success Modal -->
+    <div id="order-success-modal" class="modal">
+        <div class="modal-content success-modal-content">
+            <div class="success-icon-wrapper">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2 id="success-modal-title">အော်ဒါတင်ခြင်း အောင်မြင်ပါသည်!</h2>
+            <p class="success-subtext" id="success-modal-sub">သင့်စာအုပ်များကို အမြန်ဆုံး အိမ်တိုင်ရာရောက် ပို့ဆောင်ပေးပါမည်။</p>
+            <div class="order-invoice-card" id="order-success-details"></div>
+            <button class="submit-btn" onclick="closeModal('order-success-modal')" style="margin-top:16px;">ခေတ္တပိတ်မည်</button>
         </div>
     </div>
 
