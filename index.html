@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Myanmar Online Bookstore & E-Reader</title>
+    <title>The Reading Homies - Online Bookstore</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Navbar -->
     <header class="header">
-        <div class="brand" id="nav-brand">📚 Myanmar Bookstore</div>
+        <div class="brand" id="nav-brand">📚 The Reading Homies</div>
         <div class="header-controls">
             <input type="text" id="search-input" placeholder="စာအုပ်ရှာဖွေရန်..." oninput="handleSearch()">
             <button class="nav-btn" onclick="toggleLanguage()" id="lang-btn">EN</button>
@@ -69,7 +69,28 @@
         </div>
     </main>
 
-    <!-- E-Reader Modal (Phone & PC Responsive) -->
+    <!-- Floating Chat Widget (User & Admin Chat) -->
+    <div class="chat-widget-btn" onclick="toggleChatWindow()">
+        <i class="fa-solid fa-comments"></i>
+        <span id="chat-badge" class="chat-badge" style="display:none;">1</span>
+    </div>
+
+    <div id="chat-window" class="chat-window">
+        <div class="chat-header">
+            <div style="display:flex; align-items:center; gap:8px;">
+                <i class="fa-solid fa-headset"></i>
+                <strong id="chat-title">Admin Support Chat</strong>
+            </div>
+            <span class="close-chat" onclick="toggleChatWindow()">&times;</span>
+        </div>
+        <div id="chat-messages" class="chat-messages"></div>
+        <form id="chat-form" class="chat-input-area" onsubmit="handleSendChat(event)">
+            <input type="text" id="chat-input" placeholder="စာတို ရေးသားရန်..." required autocomplete="off">
+            <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+    </div>
+
+    <!-- E-Reader Modal -->
     <div id="reader-modal" class="modal">
         <div class="modal-content reader-modal-content">
             <div class="reader-modal-header">
@@ -171,11 +192,21 @@
         </div>
     </div>
 
-    <!-- Admin Order View Modal -->
+    <!-- Enhanced Admin Dashboard Modal with Analytics -->
     <div id="admin-modal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content admin-dashboard-modal">
             <span class="close-btn" onclick="closeModal('admin-modal')">&times;</span>
-            <h2>⚙️ Admin Dashboard - Orders</h2>
+            <h2>⚙️ The Reading Homies - Admin Analytics & Orders</h2>
+            
+            <!-- Analytics Summary Cards -->
+            <div class="admin-analytics-grid" id="admin-analytics-section"></div>
+
+            <!-- Best vs Low Selling Section -->
+            <div class="admin-sales-insights" id="admin-sales-insights"></div>
+
+            <hr class="divider">
+
+            <!-- Orders Section -->
             <div id="admin-orders-list"></div>
         </div>
     </div>
