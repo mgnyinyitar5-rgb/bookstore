@@ -1,3 +1,45 @@
+// ==========================================
+// Telegram Bot Configuration (Real-time Cross-Device Noti)
+// ==========================================
+const TELEGRAM_BOT_TOKEN = "8939232025:AAEwUq-Zkv3fuHHxJpLnhTzArVt22Q4Bjuo";
+const TELEGRAM_CHAT_ID = "YOUR_TELEGRAM_CHAT_ID"; // <-- ဒီနေရာတွင် သင့် ID ဂဏန်းကို အစားထိုးပါ (ဥပမာ "123456789")
+
+async function sendTelegramOrderNotification(order) {
+    if (!TELEGRAM_CHAT_ID || TELEGRAM_CHAT_ID === "YOUR_TELEGRAM_CHAT_ID") return;
+
+    const itemsText = order.items.map(i => `• ${i.title} (x${i.qty}) - ${(i.price * i.qty).toLocaleString()} MMK`).join('\n');
+    
+    const message = `
+📦 <b>အော်ဒါအသစ် ရောက်ရှိပါသည်! (The Reading Homies)</b>
+
+🆔 <b>Order ID:</b> <code>${order.id}</code>
+👤 <b>ဝယ်ယူသူ:</b> ${order.customerName}
+📞 <b>ဖုန်းနံပါတ်:</b> ${order.phone}
+🏠 <b>လိပ်စာ:</b> ${order.address}
+💳 <b>ငွေပေးချေမှု:</b> ${order.paymentMethod}
+📅 <b>ရက်စွဲ:</b> ${order.date}
+
+📚 <b>မှာယူထားသော စာအုပ်များ:</b>
+${itemsText}
+
+💰 <b>စုစုပေါင်း ကျသင့်ငွေ:</b> <b>${order.total.toLocaleString()} MMK</b>
+    `;
+
+    try {
+        await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                chat_id: TELEGRAM_CHAT_ID,
+                text: message,
+                parse_mode: "HTML"
+            })
+        });
+    } catch (error) {
+        console.error("Telegram Notification Error:", error);
+    }
+}
+
 // စာအုပ်ဒေတာများ
 const booksData = [
     {
@@ -237,7 +279,7 @@ const booksData = [
     }
 ];
 
-// Translation Dictionary (The Reading Homies)
+// Translations Dictionary
 const translations = {
     my: {
         brand: "📚 The Reading Homies",
@@ -326,7 +368,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// Storage Listeners (Real-time Cross-Tab Synchronization)
+// Storage Listeners
 window.addEventListener("storage", (e) => {
     if (e.key === "admin_orders") {
         updateAuthUI();
@@ -544,7 +586,7 @@ function adjustReaderFont(delta) {
 }
 
 // ==========================================
-// Shopping Cart & Cash on Delivery Checkout
+// Shopping Cart & COD Checkout Logic
 // ==========================================
 function addToCart(bookId) {
     const book = booksData.find(b => b.id === bookId);
@@ -639,6 +681,9 @@ function handleCheckout(e) {
     orders.push(order);
     localStorage.setItem("admin_orders", JSON.stringify(orders));
 
+    // Telegram Bot ထံသို့ Order Noti ချက်ချင်း ပေးပို့ခြင်း
+    sendTelegramOrderNotification(order);
+
     const orderedItems = [...cart];
     cart = [];
     saveCart();
@@ -676,7 +721,7 @@ function showOrderSuccess(order, items) {
 }
 
 // ==========================================
-// Admin Dashboard & Sales Analytics
+// Admin Dashboard & Analytics
 // ==========================================
 function openAdmin() {
     const orders = JSON.parse(localStorage.getItem("admin_orders")) || [];
@@ -722,7 +767,6 @@ function openAdmin() {
     const bestSellers = salesArray.filter(b => b.qty > 0).slice(0, 3);
     const lowSellers = salesArray.filter(b => b.qty === 0);
 
-    // Analytics Summary Cards
     const analyticsSection = document.getElementById("admin-analytics-section");
     analyticsSection.innerHTML = `
         <div class="analytics-card card-blue">
@@ -742,7 +786,6 @@ function openAdmin() {
         </div>
     `;
 
-    // Best Selling vs Low Selling Insights
     const insightsSection = document.getElementById("admin-sales-insights");
     insightsSection.innerHTML = `
         <div class="sales-insight-box">
@@ -759,7 +802,6 @@ function openAdmin() {
         </div>
     `;
 
-    // Order Records
     const list = document.getElementById("admin-orders-list");
     if (orders.length === 0) {
         list.innerHTML = `<p style="text-align:center; padding:20px; color:#888;">လက်ရှိတွင် အော်ဒါမှတ်တမ်း မရှိသေးပါ။</p>`;
@@ -795,7 +837,7 @@ function clearAllOrders() {
 }
 
 // ==========================================
-// User & Admin Live Chat System
+// User & Admin Live Chat Box System
 // ==========================================
 function toggleChatWindow() {
     const chatWin = document.getElementById("chat-window");
