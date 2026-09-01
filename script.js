@@ -237,7 +237,7 @@ const booksData = [
     }
 ];
 
-// Dictionary for Full UI Translation (The Reading Homies Brand)
+// Translation Dictionary (The Reading Homies)
 const translations = {
     my: {
         brand: "📚 The Reading Homies",
@@ -314,7 +314,7 @@ let currentLang = localStorage.getItem("lang") || "my";
 let currentUser = JSON.parse(localStorage.getItem("current_user")) || null;
 let currentFontSize = 1;
 
-// Page Load Setup
+// Page Initialization
 document.addEventListener("DOMContentLoaded", () => {
     updateLanguageUI();
     renderAllShelves();
@@ -326,7 +326,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// Storage Change Listeners (Real-time updates)
+// Storage Listeners (Real-time Cross-Tab Synchronization)
 window.addEventListener("storage", (e) => {
     if (e.key === "admin_orders") {
         updateAuthUI();
@@ -676,7 +676,7 @@ function showOrderSuccess(order, items) {
 }
 
 // ==========================================
-// Admin Dashboard with Sales & Analytics
+// Admin Dashboard & Sales Analytics
 // ==========================================
 function openAdmin() {
     const orders = JSON.parse(localStorage.getItem("admin_orders")) || [];
@@ -684,7 +684,6 @@ function openAdmin() {
     const currentMonth = now.getMonth() + 1;
     const currentYear = now.getFullYear();
 
-    // တွက်ချက်မှုများ (Monthly & Yearly Sales)
     let totalRevenue = 0;
     let monthlyRevenue = 0;
     let yearlyRevenue = 0;
@@ -692,7 +691,6 @@ function openAdmin() {
     let monthlyBooksSold = 0;
     let yearlyBooksSold = 0;
 
-    // စာအုပ်တစ်အုပ်ချင်းစီ၏ ရောင်းရသော အရေအတွက် မှတ်သားရန် Map
     const bookSalesMap = {};
     booksData.forEach(b => { bookSalesMap[b.id] = { title: b.title, qty: 0, revenue: 0 }; });
 
@@ -720,12 +718,11 @@ function openAdmin() {
         });
     });
 
-    // Best & Low Selling စာရင်းခွဲခြင်း
     const salesArray = Object.values(bookSalesMap).sort((a, b) => b.qty - a.qty);
     const bestSellers = salesArray.filter(b => b.qty > 0).slice(0, 3);
     const lowSellers = salesArray.filter(b => b.qty === 0);
 
-    // Render Analytics Cards
+    // Analytics Summary Cards
     const analyticsSection = document.getElementById("admin-analytics-section");
     analyticsSection.innerHTML = `
         <div class="analytics-card card-blue">
@@ -745,7 +742,7 @@ function openAdmin() {
         </div>
     `;
 
-    // Render Best Selling vs Low Selling Insights
+    // Best Selling vs Low Selling Insights
     const insightsSection = document.getElementById("admin-sales-insights");
     insightsSection.innerHTML = `
         <div class="sales-insight-box">
@@ -762,7 +759,7 @@ function openAdmin() {
         </div>
     `;
 
-    // Render Orders List
+    // Order Records
     const list = document.getElementById("admin-orders-list");
     if (orders.length === 0) {
         list.innerHTML = `<p style="text-align:center; padding:20px; color:#888;">လက်ရှိတွင် အော်ဒါမှတ်တမ်း မရှိသေးပါ။</p>`;
@@ -798,7 +795,7 @@ function clearAllOrders() {
 }
 
 // ==========================================
-// User & Admin Live Chat Box System
+// User & Admin Live Chat System
 // ==========================================
 function toggleChatWindow() {
     const chatWin = document.getElementById("chat-window");
