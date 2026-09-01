@@ -1,8 +1,8 @@
 // ==========================================
 // Telegram Bot Configuration (Real-time Cross-Device Noti)
 // ==========================================
-const TELEGRAM_BOT_TOKEN = "8939232025:AAEwUq-Zkv3fuHHxJpLnhTzArVt22Q4Bjuo";
-const TELEGRAM_CHAT_ID = "YOUR_TELEGRAM_CHAT_ID"; // <-- ဒီနေရာတွင် သင့် ID ဂဏန်းကို အစားထိုးပါ (ဥပမာ "123456789")
+const TELEGRAM_BOT_TOKEN = "AAEwUq-Zkv3fuHHxJpLnhTzArVt22Q4Bjuo";
+const TELEGRAM_CHAT_ID = "8939232025"; // <-- ဒီနေရာတွင် သင့် ID ဂဏန်းကို အစားထိုးပါ (ဥပမာ "123456789")
 
 async function sendTelegramOrderNotification(order) {
     if (!TELEGRAM_CHAT_ID || TELEGRAM_CHAT_ID === "YOUR_TELEGRAM_CHAT_ID") return;
