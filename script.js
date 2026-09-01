@@ -8,7 +8,7 @@ const TELEGRAM_CHAT_ID = "8297181241";
 const ADMIN_USERNAME = "admin";
 const ADMIN_PASSWORD = "admin123";
 
-// Books Database
+// Books Database (Total 44 Books)
 const defaultBooksData = [
     {
         id: 1,
@@ -299,7 +299,7 @@ const defaultBooksData = [
         author_en: "Patta Myaing Win Htein",
         category: "humor",
         price: 3500,
-        cover: "images/20.jpg",
+        cover: "images/21.jpg",
         previewText: `ဤစာအုပ်တွင် အမျိုးသမီးအများအပြားနှင့် အပြုအမူ၊ နေထိုင်ပုံ၊ အပြောအဆိုအမှားများ၊ လူ့အဖြစ်အပျက်များကို ဟာသအနေနှင့် သရော်လှောင်ပြောင် ရေးသားထားပါသည်။
 
 🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
@@ -318,7 +318,7 @@ const defaultBooksData = [
         author_en: "Arr Shin Htar",
         category: "humor",
         price: 3500,
-        cover: "images/21.jpg",
+        cover: "images/22.jpg",
         previewText: `အချစ်နဲ့ပတ်သက်တဲ့ ရယ်စရာ၊ နက်နဲတဲ့ဇာတ်လမ်းတွေစုံစွာပါဝင်တဲ့ စာအုပ်တစ်အုပ်ဖြစ်ပါတယ်။ အချစ်၊ မေတ္တာ၊ ဆက်ဆံရေးစတဲ့အကြောင်းအရာတွေကို ဟာသအနေနဲ့ရေးသားထားပြီး ဖတ်သူတွေအတွက် အပြုံးနဲ့အတွေးအခေါ်ကိုပါ ပေးစွမ်းနိုင်မှာပါ။
 
 🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
@@ -337,7 +337,7 @@ const defaultBooksData = [
         author_en: "Thi Kone Pyi",
         category: "humor",
         price: 3500,
-        cover: "images/22.jpg",
+        cover: "images/23.jpg",
         previewText: `တစ်ရွာလုံးက သိကုန်ပြီဆိုပေမယ့် တကယ်တော့ အားလုံးမသိသေးတဲ့အကြောင်းအရာတွေ၊ အချစ်နဲ့ပတ်သက်ပြီး ရယ်စရာ၊ နက်နဲတဲ့ဇာတ်လမ်းတွေကို စုံစွာဖော်ပြထားတဲ့ စာအုပ်တစ်အုပ်ဖြစ်ပါတယ်။ လူ့ဆက်ဆံရေး၊ အချစ်၊ အိမ်ထောင်ရေးစတဲ့အကြောင်းအရာတွေကို ဟာသအနေနဲ့ရေးသားထားပြီး ဖတ်သူတွေအတွက် အပြုံးနဲ့အတွေးအခေါ်ကိုပါ ပေးစွမ်းနိုင်မှာပါ။
 
 🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
@@ -356,7 +356,7 @@ const defaultBooksData = [
         author_en: "Author Unspecified",
         category: "humor",
         price: 3500,
-        cover: "images/23.jpg",
+        cover: "images/24.jpg",
         previewText: `အချစ်၊ ဆက်ဆံရေး၊ လူ့ဘဝအကြောင်းတွေကို ဟာသနှင့်စိတ်လှုပ်ရှားဖွယ်ဖော်ပြထားတဲ့ ဇာတ်လမ်းများစုပေါင်းစာအုပ်ဖြစ်ပါတယ်။ ညီအကိုအချင်းချင်း၊ ချစ်သူနှစ်ဦးကြား၊ လူအများနှင့်ဆက်ဆံပုံစတဲ့အကြောင်းအရာတွေကို ရယ်စရာအဖြစ်အပျက်များနှင့်အတူ ဖတ်သူရင်ထဲကို နက်နက်ရှိင်းရှိင်းရောက်အောင် ရေးသားထားပါတယ်။
 
 🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
@@ -375,7 +375,7 @@ const defaultBooksData = [
         author_en: "Author Unspecified",
         category: "humor",
         price: 3500,
-        cover: "images/24.jpg",
+        cover: "images/25.jpg",
         previewText: `တောကျောင်းဆိုတဲ့ အမည်နဲ့ ဇာတ်လမ်းများစုစည်းထားတဲ့ ဟာသစာအုပ်ဖြစ်ပါတယ်။ ရွာသူရွာသားတွေရဲ့ နေထိုင်ပုံ၊ အပြောအဆို၊ အပြုအမူတွေကို ရယ်စရာအဖြစ်အပျက်တွေအဖြစ် ဖော်ပြထားပြီး လူတွေရဲ့ ဆက်ဆံရေး၊ ဘဝအမြင်တွေကိုလည်း အကျဉ်းချုပ်ဖော်ပြထားတာ တွေ့ရမှာပါ။
 
 🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
@@ -394,7 +394,7 @@ const defaultBooksData = [
         author_en: "Kyaw San Ko",
         category: "humor",
         price: 3500,
-        cover: "images/25.jpg",
+        cover: "images/26.jpg",
         previewText: `ကျော်စံကိုးရဲ့ အကျော်ကြားဆုံးဟာသဇာတ်ကောင် ဦးပြောင်ရှင်းရဲ့ ရယ်စရာအဖြစ်အပျက်များကို ရုပ်ပုံဇာတ်လမ်းအဖြစ် ဖော်ပြထားတဲ့ စာအုပ်ဖြစ်ပါတယ်။ ဦးပြောင်ရှင်းဟာ အမြဲတမ်း အပြောအဆို၊ အပြုအမူတွေကြောင့် ရယ်စရာအမှားတွေကို ကျူးလွန်တတ်ပြီး လူတွေရဲ့အကြိုက်တွေ့တဲ့ ဇာတ်ကောင်တစ်ဦးဖြစ်ပါတယ်။ လူ့ဘဝ၊ နေထိုင်မှု၊ ဆက်ဆံရေးစတာတွေကို ဟာသအနေနဲ့ ဖော်ပြထားပြီး ဖတ်သူတိုင်းကို အပြုံးပေးစေမှာ ဖြစ်ပါတယ်။
 
 🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
@@ -413,7 +413,7 @@ const defaultBooksData = [
         author_en: "Kya Leim Kya Sit",
         category: "humor",
         price: 3500,
-        cover: "images/26.jpg",
+        cover: "images/27.jpg",
         previewText: `ကိုရွှေတောသားရဲ့ ရယ်စရာ၊ အချစ်နှင့်ပတ်သက်တဲ့ ဇာတ်လမ်းများစွာကို စုစည်းရေးသားထားတဲ့ စာအုပ်ဖြစ်ပါတယ်။ အမျိုးသမီးများနှင့်ဆက်ဆံရာတွင် ကြုံတွေ့ရတဲ့ ရယ်စရာအမှားများ၊ နားလည်မှုလွဲမှားမှုများ၊ ချစ်ခြင်းမေတ္တာ၏ နက်နဲပြီး ရှုပ်ထွေးသောအဖြစ်အပျက်များကို ဟာသအနေနှင့် ဖော်ပြထားပြီး ဖတ်သူတိုင်းအတွက် အပြုံးနှင့်အတွေးအခေါ်ကိုပါ ပေးစွမ်းနိုင်မှာ ဖြစ်ပါတယ်။
 
 🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
@@ -432,7 +432,7 @@ const defaultBooksData = [
         author_en: "U Hla Aung",
         category: "humor",
         price: 3500,
-        cover: "images/27.jpg",
+        cover: "images/28.jpg",
         previewText: `လူတောသားရဲ့ ရိုးရှင်းတဲ့နေထိုင်မှု၊ အပြောအဆို၊ အပြုအမူတွေကို အခြေခံပြီး ရယ်စရာဇာတ်လမ်းများစွာကို စုစည်းရေးသားထားတဲ့ စာအုပ်ဖြစ်ပါတယ်။ ရွာသူရွာသားတွေရဲ့ ဘဝအမြင်၊ ဆက်ဆံရေး၊ အချစ်အကြောင်းတွေကို ဟာသအနေနဲ့ ဖော်ပြထားပြီး ဖတ်သူတိုင်းကို အပြုံးပေးစေမှာ ဖြစ်ပါတယ်။
 
 🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
@@ -445,25 +445,6 @@ const defaultBooksData = [
     },
     {
         id: 29,
-        title: "နှလုံးသွေးနှင့်သွေးချင်း",
-        title_en: "Heart and Kinship",
-        author: "ဖော်ပြမထား",
-        author_en: "Author Unspecified",
-        category: "humor",
-        price: 3500,
-        cover: "images/28.jpg",
-        previewText: `အချစ်၊ မေတ္တာ၊ ဆက်ဆံရေးနှင့်ပတ်သက်တဲ့ ရယ်စရာ၊ နက်နဲတဲ့ဇာတ်လမ်းများစွာကို စုစည်းရေးသားထားတဲ့ စာအုပ်ဖြစ်ပါတယ်။ နှလုံးသွေးနှင့်သွေးချင်းဆိုတဲ့အမည်နဲ့အညီ ချစ်ခြင်း၊ မေတ္တာ၊ ဆွေမျိုးပေါင်းသင်းခြင်းစတဲ့အကြောင်းအရာတွေကို ဟာသအနေနဲ့ဖော်ပြထားပြီး ဖတ်သူတိုင်းကို အပြုံးနဲ့အတွေးအခေါ်ကိုပါ ပေးစွမ်းနိုင်မှာ ဖြစ်ပါတယ်။
-
-🌟 အကောင်းဆုံး ကောက်နုတ်ချက်နှင့် အနှစ်ချုပ် (Highlights):
-• ချစ်ခြင်းမေတ္တာနှင့် ဆွေမျိုးသွေးချင်း သံယောဇဉ်များအကြား ကြုံတွေ့ရသော ရယ်ရွှင်ဖွယ် အလွဲများ။
-• လူမှုဆက်ဆံရေးပြဿနာများကို ဟာသရသဖြင့် ပေါ့ပါးစွာ ဖြေရှင်းတင်ပြထားပုံ။
-• ဖတ်ရှုသူတိုင်း စိတ်နှလုံးကြည်နူးစေပြီး ဘဝအတွက် အသိအမြင်ရစေမည့် ဟာသနှင့် အချစ်ဝတ္ထုတိုများ။
-
-💡 ဖတ်ရှုသင့်သူများ: ချစ်ခြင်း၊ မေတ္တာနှင့် မိသားစုရသ ဟာသဇာတ်လမ်းတိုများကို နှစ်သက်သူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `A touching and humorous collection of short stories revolving around love, kinship, and the witty dynamics of family and romantic ties.`
-    },
-    {
-        id: 30,
         title: "အီကီဂိုင်း (IKIGAI)",
         title_en: "Ikigai: The Japanese Secret to a Long and Happy Life",
         author: "Hector Garcia",
@@ -484,7 +465,7 @@ const defaultBooksData = [
         previewText_en: `Ikigai translates to "a reason for being"—the Japanese concept that brings purpose, satisfaction, and longevity to life.`
     },
     {
-        id: 31,
+        id: 30,
         title: "ဆေးလိပ်ကို စွန့်လွှတ်နိုင်မည့် နည်းလမ်းများ",
         title_en: "The Easy Way to Stop Smoking",
         author: "Allen Carr",
@@ -503,7 +484,7 @@ const defaultBooksData = [
         previewText_en: `Allen Carr's globally acclaimed method to help smokers quit permanently without willpower battles, stress, or weight gain.`
     },
     {
-        id: 32,
+        id: 31,
         title: "စိတ်ရဲ့အစာအိမ် (The Mind-Gut Connection)",
         title_en: "The Mind-Gut Connection",
         author: "အမ်မရမ် မေယာ (Emeran A. Mayer)",
@@ -524,7 +505,7 @@ const defaultBooksData = [
         previewText_en: `Explore how the conversation between the brain and the gut microbiome impacts everyday mood, mental choices, and overall physical health.`
     },
     {
-        id: 33,
+        id: 32,
         title: "စိတ်ခံစားမှုကျန်းမာရေး (Emotional Health)",
         title_en: "Emotional Health",
         author: "အောက်စ်ဖိုဒ့် ဆရာတော် ပါမောက္ခ ဒေါက်တာဓမ္မသာမိ (DPhil Oxford)",
@@ -543,7 +524,7 @@ const defaultBooksData = [
         previewText_en: `A profound mental and emotional wellness guide written by Oxford scholar Prof. Dr. Dhammasami to cultivate emotional clarity and inner peace.`
     },
     {
-        id: 34,
+        id: 33,
         title: "မိန်းမသားများအတွက် အချစ်ရေးနှင့်အိမ်ထောင်ရေး အမေးအဖြေ",
         title_en: "Questions and Answers of Love and Marriage for Women",
         author: "မေသရဝဏ်ဦး",
@@ -562,7 +543,7 @@ const defaultBooksData = [
         previewText_en: `A practical and insightful guide featuring thoughtful Q&As on love, marriage, and emotional wisdom tailored for women.`
     },
     {
-        id: 35,
+        id: 34,
         title: "အိပ်စက်ခြင်း (SLEEP)",
         title_en: "Sleep: The Myth of 8 Hours, the Power of Naps, and the New Plan to Recharge Your Body and Mind",
         author: "နစ်ခ် လစ်တဲလ်ဟေးလ်စ် (Nick Littlehales)",
@@ -581,7 +562,7 @@ const defaultBooksData = [
         previewText_en: `Transform your sleep and energy with the revolutionary R90 technique developed by elite sports sleep coach Nick Littlehales.`
     },
     {
-        id: 36,
+        id: 35,
         title: "ခင်ဗျားကို ကျွန်တော်ချစ်တယ်",
         title_en: "I Love You",
         author: "စစ်စွန်းဇံ",
@@ -599,15 +580,10 @@ const defaultBooksData = [
 • ဘယ်လို အခက်အခဲတွေပဲ ကြုံရပါစေ လက်တွဲမဖြုတ်ဘဲ အတူတူ ရပ်တည်ကျော်ဖြတ်သွားမည့် ကြည်နူးဖွယ် အချစ်ဇာတ်လမ်း။
 
 💡 ဖတ်ရှုသင့်သူများ: ခေတ်ပေါ် အချစ်ဝတ္ထုများနှင့် စိတ်နှလုံးကို နွေးထွေးကြည်နူးစေမည့် ရသခံစားမှုများကို နှစ်သက်သူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `A heartfelt contemporary romance exploring unspoken feelings, emotional resilience, and the enduring power of true affection.
-
-🌟 Key Highlights:
-• Emotional depth navigating love, separation, and heartfelt reunions.
-• A tender depiction of unwavering dedication and mutual understanding through adversity.
-• An evocative romantic story celebrating warmth, connection, and steadfast promises.`
+        previewText_en: `A heartfelt contemporary romance exploring unspoken feelings, emotional resilience, and the enduring power of true affection.`
     },
     {
-        id: 37,
+        id: 36,
         title: "အိပ်ရာဝင်စကားပုံ ပုံပြင်များ",
         title_en: "Bedtime Stories and Poems",
         author: "သင်ထောက်ကူ ကလေးကဗျာနှင့် ပုံပြင်များ",
@@ -625,15 +601,10 @@ const defaultBooksData = [
 • အိပ်ရာဝင်ချိန် မိဘနှင့် သားသမီးကြား သံယောဇဉ်ကို ပိုမိုနွေးထွေးစေမည့် ရိုးရှင်းသော ကဗျာရသများ။
 
 💡 ဖတ်ရှုသင့်သူများ: သားသားမီးမီးတို့အတွက် အိပ်ရာဝင် ပုံပြင်ကောင်းများနှင့် ကလေးကဗျာ ဖတ်ပြလိုသော မိဘများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `A delightful compilation of bedtime stories and gentle poems crafted to spark imagination and instill moral values in children.
-
-🌟 Key Highlights:
-• Imaginative and soothing bedtime storytelling tailored for young minds.
-• Inspiring themes covering family warmth, kindness, and appreciation of nature.
-• Perfect read-aloud material to strengthen parent-child bonding before sleep.`
+        previewText_en: `A delightful compilation of bedtime stories and gentle poems crafted to spark imagination and instill moral values in children.`
     },
     {
-        id: 38,
+        id: 37,
         title: "ဂျပန်ခေတ်ပေါ်ကဗျာ",
         title_en: "Modern Japanese Poetry",
         author: "သစ္စာနီ",
@@ -649,15 +620,10 @@ const defaultBooksData = [
 • နိုင်ငံတကာ စာပေယဉ်ကျေးမှုနှင့် ကမ္ဘာ့ကဗျာရေစီးကြောင်းကို ကျယ်ပြန့်စွာ လေ့လာခံစားနိုင်ခြင်း။
 
 💡 ဖတ်ရှုသင့်သူများ: ကဗျာချစ်သူများ၊ နိုင်ငံတကာ ဘာသာပြန်စာပေနှင့် ဂျပန်ယဉ်ကျေးမှုကို စိတ်ဝင်စားသူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `A masterful collection translating modern and classic Japanese verse—including Haiku and Tanka forms—into Burmese by Thitsar Ni.
-
-🌟 Key Highlights:
-• The evocative conciseness and layered emotional depth of Japanese poetry.
-• Nature imagery, human introspection, and life philosophy reflected across changing eras.
-• A rich cultural bridge connecting readers to world literature and poetic craft.`
+        previewText_en: `A masterful collection translating modern and classic Japanese verse—including Haiku and Tanka forms—into Burmese by Thitsar Ni.`
     },
     {
-        id: 39,
+        id: 38,
         title: "အောင်ဝေး – လက်ရွေးစင်ကဗျာများ (၁၉၈၂–၈၈)",
         title_en: "Aung Way – Selected Poems (1982–88)",
         author: "အောင်ဝေး",
@@ -673,15 +639,10 @@ const defaultBooksData = [
 • ၁၉၈၀ ပြည့်လွန်နှစ်များ၏ ခေတ်ပြိုင် စာပေရေစီးကြောင်းနှင့် သမိုင်းဝင် ကဗျာရနံ့များ။
 
 💡 ဖတ်ရှုသင့်သူများ: မြန်မာကဗျာချစ်သူများ၊ ခေတ်ပေါ်ကဗျာလက်ရာများနှင့် ခေတ်ကာလ စာပေရသကို တန်ဖိုးထားသူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `A timeless anthology of selected contemporary verses written between 1982 and 1988 by renowned Burmese poet Aung Way.
-
-🌟 Key Highlights:
-• Signature poetic works including "Story in the Rain", "Moonlight and Path", and "Echoes of the Green Homeland".
-• Minimalist, evocative wording capturing deep human introspection and nature.
-• Authentic literary flavors reflecting the cultural and social atmosphere of the 1980s.`
+        previewText_en: `A timeless anthology of selected contemporary verses written between 1982 and 1988 by renowned Burmese poet Aung Way.`
     },
     {
-        id: 40,
+        id: 39,
         title: "အဝါရောင်ပန်းပွင့်များ",
         title_en: "Yellow Flowers",
         author: "နွေအိမ်မောင်ဝင်း",
@@ -697,15 +658,10 @@ const defaultBooksData = [
 • နေရောင်အောက်တွင် တောက်ပစွာ ပွင့်လန်းသော အဝါရောင်ပန်းပွင့်များကဲ့သို့ ဘဝကို အကောင်းမြင်စိတ်ဖြင့် ရှင်သန်နိုင်စေမည့် အားအင်များ။
 
 💡 ဖတ်ရှုသင့်သူများ: ခံစားမှုရသ နက်နဲသော ကဗျာများကို နှစ်သက်သူများနှင့် စိတ်နှလုံးကို အေးချမ်းနွေးထွေးစေလိုသူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `A tender and evocative collection of modern poems reflecting emotional nuances, love, heartbreak, and quiet resilience.
-
-🌟 Key Highlights:
-• Lyrical verses drawing metaphors from nature, rain scents, and blooming yellow daffodils.
-• Deep emotional resonance exploring yearning, gentle sorrow, and persistent hope.
-• Inspiring poetic reflections on blooming beautifully despite life's changing seasons.`
+        previewText_en: `A tender and evocative collection of modern poems reflecting emotional nuances, love, heartbreak, and quiet resilience.`
     },
     {
-        id: 41,
+        id: 40,
         title: "ဝေရဲ့ကြွေရဲ့ စေတနာပန်းပွင့်များ",
         title_en: "Petals of Kindness That Fall and Drift",
         author: "ခင်လှိုင်းကျော်",
@@ -721,15 +677,10 @@ const defaultBooksData = [
 • ပျော်ရွှင်မှု၊ ဝမ်းနည်းမှု၊ ခွဲခွာခြင်းနှင့် မျှော်လင့်ချက်များကို စာသားအလှများဖြင့် နှလုံးသားထဲ ရောက်အောင် ရေးဖွဲ့ထားသော ကဗျာရသများ။
 
 💡 ဖတ်ရှုသင့်သူများ: မြန်မာစာပေနှင့် ကဗျာရသများကို နှစ်သက်သူများ၊ စိတ်နှလုံးကို အေးချမ်းကြည်နူးစေမည့် သုတရသ ကဗျာကောင်းများကို ဖတ်ရှုလိုသူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `A thoughtful collection of Burmese literary poetry exploring changing seasons, enduring benevolence, and the gentle beauty of drifting flower petals.
-
-🌟 Key Highlights:
-• Everlasting kindness and goodwill that remain steady through life's shifting circumstances.
-• Poetic reflections on passing memories, nature's impermanence, and heartfelt connections.
-• Moving verses that balance sorrow, separation, joy, and gentle hope.`
+        previewText_en: `A thoughtful collection of Burmese literary poetry exploring changing seasons, enduring benevolence, and the gentle beauty of drifting flower petals.`
     },
     {
-        id: 42,
+        id: 41,
         title: "အစ်ကို... သို့",
         title_en: "To My Brother",
         author: "ဖရော်ဆန်",
@@ -747,15 +698,10 @@ const defaultBooksData = [
 • ရွေးချယ်မှုတိုင်းတွင် ကိုယ်ပါဝင်မနေခဲ့ရသော်လည်း အဝေးမှ တိတ်တဆိတ် ဆုတောင်းပေးနေမည့် မေတ္တာနှင့် ဘဝရသများ။
 
 💡 ဖတ်ရှုသင့်သူများ: စိတ်ခံစားမှုရသ နက်နဲသော စာပေများ၊ မိသားစုနှင့် လူမှုဆက်ဆံရေး ဒရာမာဝတ္ထုများကို နှစ်သက်သူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `A poignant, emotionally charged literary novella detailing unrequited affection, silent grief, and the bittersweet acceptance of being left behind.
-
-🌟 Key Highlights:
-• An intimate exploration of longing, silence, and one-sided emotional attachment.
-• The heartbreak of watching someone give their absolute best to another while remaining distant to you.
-• Resilient acceptance of painful life choices and quiet devotion from afar.`
+        previewText_en: `A poignant, emotionally charged literary novella detailing unrequited affection, silent grief, and the bittersweet acceptance of being left behind.`
     },
     {
-        id: 43,
+        id: 42,
         title: "နင့်နေအောင် ချစ်ခဲ့မိ၍ ရူးနေအောင် နာကျင်နေရပါသည်",
         title_en: "Loving You Till I Was Crazy, Hurting Till I Was Mad",
         author: "ဂုဏ်ရှိန်ဝါ",
@@ -773,15 +719,10 @@ const defaultBooksData = [
 • အချိန်တွေ မည်မျှပင် ကြာညောင်းပါစေ အဝေးမှသာ တိတ်တဆိတ် ဆုတောင်းပေးရင်း ကျန်ရစ်ခဲ့ရသည့် အချစ်ဒရာမာ ရသဝတ္ထု။
 
 💡 ဖတ်ရှုသင့်သူများ: စိတ်ခံစားမှုပြင်းထန်သော အချစ်ဒရာမာနှင့် ရင်နင့်ဖွယ် ခေတ်ပေါ် အချစ်ဝတ္ထုများကို နှစ်သက်သူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `A deeply emotional contemporary romantic drama depicting the profound ache of unrequited love, lingering memories, and silent heartbreak.
-
-🌟 Key Highlights:
-• The bittersweet agony of loving deeply with no hope of mutual possession.
-• Emotional struggles between the yearning to forget and the indelible warmth of past memories.
-• A touching narrative on finding closure through silent goodwill and enduring acceptance.`
+        previewText_en: `A deeply emotional contemporary romantic drama depicting the profound ache of unrequited love, lingering memories, and silent heartbreak.`
     },
     {
-        id: 44,
+        id: 43,
         title: "တမိုးထဲအောက်မှာ",
         title_en: "Beneath the Same Sky",
         author: "တက္ကသိုလ်အမှတ်တရ – ကဗျာများ",
@@ -797,15 +738,10 @@ const defaultBooksData = [
 • နှစ်များစွာ ကြာညောင်းသွားသော်လည်း ရင်ထဲတွင် အမြဲရှင်သန်နေမည့် ကံ့ကော်မြေနှင့် ကျောင်းသားဘဝ ကဗျာရနံ့များ။
 
 💡 ဖတ်ရှုသင့်သူများ: တက္ကသိုလ်ကျောင်းသားဘဝ အမှတ်တရများကို လွမ်းဆွတ်တန်ဖိုးထားသူများနှင့် ခေတ်ပြိုင် ရသကဗျာ ချစ်သူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `A nostalgic poetry collection capturing timeless university memories, youthful aspirations, exams, and lifelong friendships formed under the same sky.
-
-🌟 Key Highlights:
-• Evocative verses commemorating campus life, youthful ambition, and shared struggles since 1995.
-• The unbreakable bonds of lifelong friends navigating academic hurdles and emotional growth together.
-• Enduring nostalgic imagery of university days preserved through heartfelt poetic reflections.`
+        previewText_en: `A nostalgic poetry collection capturing timeless university memories, youthful aspirations, exams, and lifelong friendships formed under the same sky.`
     },
     {
-        id: 45,
+        id: 44,
         title: "အညိုရောင် မေပယ်ရွက်လေးသို့",
         title_en: "To the Brown Maple Leaf",
         author: "Lavender Pan",
@@ -823,17 +759,22 @@ const defaultBooksData = [
 • ခွဲခွာခြင်းနှင့် အတိတ်ဒဏ်ရာများကို နွေးထွေးစွာ ရင်ဆိုင်ကုစားစေမည့် ခေတ်ပေါ် ရသဝတ္ထု။
 
 💡 ဖတ်ရှုသင့်သူများ: နူးညံ့သိမ်မွေ့သော အချစ်ရသနှင့် စိတ်နှလုံးကို အေးချမ်းစေမည့် ခေတ်ပေါ် စာပေများကို ချစ်မြတ်နိုးသူများအတွက် ဖြစ်ပါသည်။`,
-        previewText_en: `A tender, poignant contemporary romance reflecting on unconditional love, quiet acceptance, and treasured autumn memories.
-
-🌟 Key Highlights:
-• Finding solace and enduring beauty in love without the need for possession.
-• The timeless metaphor of changing brown maple leaves preserving deep, unchanging affection.
-• Gentle storytelling capturing the emotional warmth of memories and patient healing.`
-    },
+        previewText_en: `A tender, poignant contemporary romance reflecting on unconditional love, quiet acceptance, and treasured autumn memories.`
+    }
 ];
 
-let booksData = JSON.parse(localStorage.getItem("custom_books_data")) || defaultBooksData;
+// Always sync and load the complete latest catalog
+let booksData = defaultBooksData;
+const customStored = localStorage.getItem("custom_books_data");
+if (customStored) {
+    const parsed = JSON.parse(customStored);
+    // Merge user added books if any exist beyond default
+    if (Array.isArray(parsed) && parsed.length > defaultBooksData.length) {
+        booksData = parsed;
+    }
+}
 
+// Translations
 const translations = {
     my: {
         brand: "📚 The Reading Homes",
@@ -1097,10 +1038,15 @@ function createBookCardHTML(book) {
     const readText = translations[currentLang].readBtn;
     const addCartText = translations[currentLang].addCartBtn;
 
+    const baseImgName = book.cover.replace(/\.[^/.]+$/, ""); 
+
     return `
         <div class="book-card">
-            <img src="${book.cover}" alt="${book.title}" class="book-cover" 
-                 onerror="this.onerror=null; if(this.src.includes('images/')){ this.src=this.src.replace('images/','image/'); } else { this.src='https://via.placeholder.com/120x175?text=No+Cover'; }">
+            <img src="${book.cover}" alt="${title}" class="book-cover" 
+                 onerror="if(!this.dataset.triedPng){ this.dataset.triedPng=1; this.src='${baseImgName}.png'; } 
+                          else if(!this.dataset.triedJpeg){ this.dataset.triedJpeg=1; this.src='${baseImgName}.jpeg'; }
+                          else if(!this.dataset.triedWebp){ this.dataset.triedWebp=1; this.src='${baseImgName}.webp'; }
+                          else { this.onerror=null; this.src='https://via.placeholder.com/120x175?text=Cover'; }">
             <h3 class="book-title">${title}</h3>
             <p class="book-author">${author}</p>
             <p class="book-price">${book.price.toLocaleString()} MMK</p>
@@ -1231,7 +1177,7 @@ function openMyOrders() {
     document.getElementById("my-orders-modal").style.display = "block";
 }
 
-// Telegram
+// Telegram Integration
 function sendOrderToTelegram(order, items) {
     if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) return;
 
