@@ -3,37 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Myanmar Online Bookstore & E-Reader</title>
+    <title>The Reading Homes – Online Bookstore & E-Reader</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Navbar -->
     <header class="header">
-        <div class="brand" id="nav-brand">📚 Myanmar Bookstore</div>
+        <div class="brand" id="nav-brand">📚 The Reading Homes</div>
         <div class="header-controls">
             <input type="text" id="search-input" placeholder="စာအုပ်ရှာဖွေရန်..." oninput="handleSearch()">
             <button class="nav-btn" onclick="toggleLanguage()" id="lang-btn">EN</button>
             <button class="nav-btn" onclick="toggleTheme()" id="theme-btn">🌓 Theme</button>
-            <button class="nav-btn cart-btn" onclick="openCart()" id="cart-nav-btn">
-                🛒 Cart (<span id="cart-count">0</span>)
-            </button>
+            <button class="nav-btn my-orders-btn" onclick="openMyOrders()" id="my-orders-nav-btn">📜 <span id="label-nav-orders">Orders</span></button>
+            <button class="nav-btn cart-btn" onclick="openCart()" id="cart-nav-btn">🛒 Cart (<span id="cart-count">0</span>)</button>
             
             <div id="auth-nav-container">
                 <button class="nav-btn auth-btn" onclick="openAuthModal()" id="login-nav-btn">👤 Login</button>
             </div>
 
-            <button class="nav-btn admin-btn-highlight" onclick="openAdmin()" id="admin-nav-btn" style="display: none;">⚙️ Admin</button>
+            <!-- Admin Button (Hidden for normal users, visible only after Admin login) -->
+            <button class="nav-btn admin-btn-highlight" onclick="openAdminDashboard()" id="admin-nav-btn" style="display: none;">⚙️ Admin</button>
         </div>
     </header>
 
-    <!-- Top Hero Banner -->
+    <!-- Hero Banner with Book Background Image -->
     <section class="hero-banner">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">စာပေသည် လူ့မိတ်ဆွေ၊ အသိပညာ၏ အလင်းရောင်</h1>
-            <p class="hero-subtitle">သင်ဖတ်ရှုလိုသော နည်းပညာ၊ အတွေးအမြင်နှင့် သုတရသ စာအုပ်ပေါင်းများစွာကို တစ်နေရာတည်းတွင် လွယ်ကူစွာ အမြည်းဖတ်ရှုပြီး အိမ်တိုင်ရာရောက် မှာယူလိုက်ပါ</p>
-            <a href="#default-shelves" class="hero-btn">📚 စာအုပ်များ ကြည့်ရှုမည်</a>
+            <div class="hero-icon-top"><i class="fa-solid fa-book-open-reader"></i></div>
+            <h1 class="hero-title" id="hero-title">The Reading Homes<br>အသိပညာ၏ အလင်းရောင်</h1>
+            <p class="hero-desc" id="hero-desc">
+                သင်ဖတ်ရှုလိုသော နည်းပညာ၊ အတွေးအမြင်နှင့် သုတရသ စာအုပ်ပေါင်းများစွာကို တစ်နေရာတည်းတွင် လွယ်ကူစွာ နမူနာဖတ်ရှုပြီး အိမ်တိုင်ရာရောက် မှာယူလိုက်ပါ
+            </p>
         </div>
     </section>
 
@@ -79,7 +81,7 @@
         </div>
     </main>
 
-    <!-- E-Reader Modal (Phone & PC Responsive) -->
+    <!-- E-Reader Modal -->
     <div id="reader-modal" class="modal">
         <div class="modal-content reader-modal-content">
             <div class="reader-modal-header">
@@ -94,25 +96,47 @@
         </div>
     </div>
 
-    <!-- Auth Modal -->
+    <!-- User My Orders Modal -->
+    <div id="my-orders-modal" class="modal">
+        <div class="modal-content my-orders-modal-content">
+            <span class="close-btn" onclick="closeModal('my-orders-modal')">&times;</span>
+            <div class="checkout-header">
+                <h2>📜 <span id="my-orders-modal-title">ကျွန်ုပ်၏ အော်ဒါမှတ်တမ်းများ</span></h2>
+                <p class="checkout-subtitle" id="my-orders-modal-sub">Royal Express ဖြင့် ပို့ဆောင်ပေးနေသော စာအုပ်များစာရင်း</p>
+            </div>
+            <div id="my-orders-list" class="my-orders-container"></div>
+        </div>
+    </div>
+
+    <!-- Auth Modal (User & Admin Switchable Login) -->
     <div id="auth-modal" class="modal">
         <div class="modal-content auth-modal-content">
             <span class="close-btn" onclick="closeModal('auth-modal')">&times;</span>
             <div class="auth-tabs">
                 <button id="tab-login-btn" class="tab-btn active" onclick="switchAuthTab('login')">အကောင့်ဝင်ရန်</button>
                 <button id="tab-register-btn" class="tab-btn" onclick="switchAuthTab('register')">အကောင့်ဖွင့်ရန်</button>
+                <button id="tab-admin-btn" class="tab-btn" onclick="switchAuthTab('admin')">🔒 Admin</button>
             </div>
 
+            <!-- User Login Form -->
             <form id="login-form" onsubmit="handleLogin(event)">
                 <input type="text" id="login-username" placeholder="Username (အမည်)" required class="form-input">
                 <input type="password" id="login-password" placeholder="Password (လျှို့ဝှက်နံပါတ်)" required class="form-input">
                 <button type="submit" class="submit-btn" id="login-submit-btn">Login ဝင်မည်</button>
             </form>
 
+            <!-- User Register Form -->
             <form id="register-form" style="display: none;" onsubmit="handleRegister(event)">
                 <input type="text" id="reg-username" placeholder="Username အသစ်" required class="form-input">
                 <input type="password" id="reg-password" placeholder="Password သတ်မှတ်ပါ" required class="form-input">
                 <button type="submit" class="submit-btn" style="background-color: #198754;" id="reg-submit-btn">အကောင့်သစ် ဖွင့်မည်</button>
+            </form>
+
+            <!-- Dedicated Admin Login Form -->
+            <form id="admin-auth-form" style="display: none;" onsubmit="handleAdminLogin(event)">
+                <input type="text" id="admin-user-input" placeholder="Admin Username (admin)" required class="form-input">
+                <input type="password" id="admin-pass-input" placeholder="Admin Password (admin123)" required class="form-input">
+                <button type="submit" class="submit-btn" style="background-color: #343a40;">Admin အဖြစ် ဝင်ရောက်မည်</button>
             </form>
         </div>
     </div>
@@ -123,7 +147,7 @@
             <span class="close-btn" onclick="closeModal('cart-modal')">&times;</span>
             <div class="checkout-header">
                 <h2>🛒 <span id="cart-modal-title">Shopping Cart & Checkout</span></h2>
-                <p class="checkout-subtitle" id="cart-modal-subtitle">အိမ်ရောက်ငွေချေစနစ်ဖြင့် လွယ်ကူလျင်မြန်စွာ မှာယူလိုက်ပါ</p>
+                <p class="checkout-subtitle" id="cart-modal-subtitle">Royal Express အိမ်ရောက်ငွေချေစနစ်ဖြင့် လွယ်ကူလျင်မြန်စွာ မှာယူလိုက်ပါ</p>
             </div>
 
             <div class="checkout-grid">
@@ -154,8 +178,13 @@
                             <textarea id="cust-address" placeholder="အိမ်အမှတ်၊ လမ်း၊ ရပ်ကွက်၊ မြို့နယ်..." required class="form-input" rows="3"></textarea>
                         </div>
 
+                        <div class="delivery-partner-badge">
+                            <i class="fa-solid fa-truck-fast"></i>
+                            <span id="delivery-partner-text">ပို့ဆောင်ရေး: <strong>Royal Express</strong> ဖြင့် အိမ်အရောက် ပို့ဆောင်ပေးပါသည်</span>
+                        </div>
+
                         <div class="payment-badge">
-                            <i class="fa-solid fa-truck-ramp-box"></i>
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
                             <span id="payment-badge-text">ငွေပေးချေမှု: အိမ်ရောက်ငွေချေ (Cash On Delivery)</span>
                         </div>
 
@@ -175,19 +204,22 @@
                 <i class="fa-solid fa-circle-check"></i>
             </div>
             <h2 id="success-modal-title">အော်ဒါတင်ခြင်း အောင်မြင်ပါသည်!</h2>
-            <p class="success-subtext" id="success-modal-sub">သင့်စာအုပ်များကို အမြန်ဆုံး အိမ်တိုင်ရာရောက် ပို့ဆောင်ပေးပါမည်။</p>
+            <p class="success-subtext" id="success-modal-sub">သင့်စာအုပ်များကို Royal Express ဖြင့် အမြန်ဆုံး အိမ်တိုင်ရာရောက် ပို့ဆောင်ပေးပါမည်။</p>
             <div class="order-invoice-card" id="order-success-details"></div>
-            <button class="submit-btn" id="success-done-btn" onclick="closeModal('order-success-modal')" style="margin-top:16px; background-color:#198754;">အောင်မြင်ပါသည်</button>
+            <button class="submit-btn" onclick="closeModal('order-success-modal')" style="margin-top:16px;">ခေတ္တပိတ်မည်</button>
         </div>
     </div>
 
-    <!-- Admin Dashboard Modal -->
+    <!-- Admin Dashboard Modal (Admin Only) -->
     <div id="admin-modal" class="modal">
         <div class="modal-content admin-modal-content">
             <span class="close-btn" onclick="closeModal('admin-modal')">&times;</span>
             <div class="admin-header">
-                <h2>⚙️ Bookstore Admin Dashboard</h2>
-                <div class="admin-tabs">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <h2>⚙️ The Reading Homes – Admin Dashboard</h2>
+                    <button class="logout-link" onclick="adminLogout()" style="background:none; border:none; font-weight:bold; cursor:pointer;">🚪 Admin ထွက်မည်</button>
+                </div>
+                <div class="admin-tabs" style="margin-top:10px;">
                     <button id="admin-tab-orders-btn" class="tab-btn active" onclick="switchAdminTab('orders')">📦 Orders (<span id="admin-orders-count">0</span>)</button>
                     <button id="admin-tab-addbook-btn" class="tab-btn" onclick="switchAdminTab('addbook')">➕ Add Book</button>
                 </div>
@@ -226,7 +258,7 @@
                             <label>Category (ကဏ္ဍ)</label>
                             <select id="new-book-category" class="form-input" required>
                                 <option value="tech">Technical (နည်းပညာ)</option>
-                                <option value="health">Health (ကျန်းမာရေး)</option>
+                                <option value="health">Health & Mindset (ကျန်းမာရေးနှင့် အတွေးအမြင်)</option>
                                 <option value="horror">Horror (ထိတ်လန့်ဖွယ်)</option>
                                 <option value="drama">Drama (ဒရာမာ)</option>
                                 <option value="humor">Humor (ဟာသ)</option>
