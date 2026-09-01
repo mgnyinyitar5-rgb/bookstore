@@ -8,6 +8,20 @@ const TELEGRAM_CHAT_ID = "8297181241";
 const ADMIN_USERNAME = "admin";
 const ADMIN_PASSWORD = "admin123";
 
+// Myanmar Cities List for Address Validation
+const MYANMAR_CITIES = [
+    "yangon", "ရန်ကုန်", "mandalay", "မန္တလေး", "naypyidaw", "နေပြည်တော်",
+    "bago", "ပဲခူး", "taunggyi", "တောင်ကြီး", "monywa", "မုံရွာ",
+    "mawlamyine", "မော်လမြိုင်", "pathein", "ပုသိမ်", "pyay", "ပြည်",
+    "pyinoolwin", "ပြင်ဦးလွင်", "meiktila", "မိတ္ထီလာ", "sittwe", "စစ်တွေ",
+    "magway", "မကွေး", "lashio", "လားရှိုး", "myitkyina", "မြစ်ကြီးနား",
+    "hpa-an", "ဘားအံ", "dawei", "ထားဝယ်", "myeik", "မြိတ်",
+    "kawthaung", "ကော့သောင်း", "shwebo", "ရွှေဘို", "pakokku", "ပခုက္ကူ",
+    "sagaing", "စစ်ကိုင်း", "kalay", "ကလေး", "loikaw", "လွိုင်ကော်",
+    "hakha", "ဟားခါး", "muse", "မူဆယ်", "tachileik", "တာချီလိတ်",
+    "thantwe", "သံတွဲ", "kyaukpyu", "ကျောက်ဖြူ", "insein", "လှိုင်", "ကမာရွတ်"
+];
+
 // Books Database (Total 44 Books)
 const defaultBooksData = [
     {
@@ -768,7 +782,6 @@ let booksData = defaultBooksData;
 const customStored = localStorage.getItem("custom_books_data");
 if (customStored) {
     const parsed = JSON.parse(customStored);
-    // Merge user added books if any exist beyond default
     if (Array.isArray(parsed) && parsed.length > defaultBooksData.length) {
         booksData = parsed;
     }
@@ -880,6 +893,25 @@ function updateAdminVisibility() {
     if (adminBtn) {
         adminBtn.style.display = isAdminAuthenticated ? "inline-block" : "none";
     }
+}
+
+// Lockout Checker Helper
+function checkAddressLockout() {
+    const lockUntil = localStorage.getItem("address_lock_until");
+    if (lockUntil) {
+        const remainingTime = parseInt(lockUntil) - Date.now();
+        if (remainingTime > 0) {
+            const minutesLeft = Math.ceil(remainingTime / (1000 * 60));
+            alert(currentLang === 'my' 
+                ? `လိပ်စာ ၃ ကြိမ် မှားယွင်းထားသဖြင့် အော်ဒါတင်ခြင်းကို ခေတ္တပိတ်ထားပါသည်။ နောက်ထပ် ${minutesLeft} မိနစ်အကြာမှသာ ထပ်မံ ကြိုးစားနိုင်ပါမည်။` 
+                : `Order locked due to 3 failed attempts. Please try again after ${minutesLeft} minutes.`);
+            return true;
+        } else {
+            localStorage.removeItem("address_lock_until");
+            localStorage.removeItem("address_fail_count");
+        }
+    }
+    return false;
 }
 
 // ==========================================
@@ -1212,7 +1244,7 @@ ${itemsText}
 }
 
 // ==========================================
-// Cart & Checkout
+// Cart & Checkout (With Myanmar City & 3-Fail Lockout Check)
 // ==========================================
 function addToCart(bookId) {
     const book = booksData.find(b => b.id === bookId);
@@ -1269,12 +1301,19 @@ function changeQty(index, change) {
 
 function handleCheckout(e) {
     e.preventDefault();
+
+    // ၁။ ၁ နာရီ Lockout ကျနေခြင်း ရှိ/မရှိ စစ်ဆေးခြင်း
+    if (checkAddressLockout()) {
+        return;
+    }
+
     if (cart.length === 0) return alert(currentLang === 'my' ? "Cart ထဲတွင် စာအုပ်မရှိပါ။" : "Your cart is empty.");
 
     const name = document.getElementById("cust-name").value.trim();
     const phone = document.getElementById("cust-phone").value.trim();
     const address = document.getElementById("cust-address").value.trim();
 
+    // ၂။ ဖုန်းနံပါတ် စစ်ဆေးခြင်း
     let cleanPhone = phone.replace(/[\s\-]/g, "");
     if (cleanPhone.startsWith("+959")) cleanPhone = "09" + cleanPhone.substring(4);
     if (cleanPhone.startsWith("959")) cleanPhone = "09" + cleanPhone.substring(3);
@@ -1283,6 +1322,35 @@ function handleCheckout(e) {
     if (!mmPhoneRegex.test(cleanPhone)) {
         return alert(currentLang === 'my' ? "တရားဝင် မြန်မာဖုန်းနံပါတ် (09xxxxxxxxx) ကိုသာ ရိုက်ထည့်ပေးပါ။" : "Please provide a valid Myanmar phone number (09xxxxxxxxx).");
     }
+
+    // ၃။ မြန်မာနိုင်ငံရှိ မြို့အမည် ပါ/မပါ စစ်ဆေးခြင်း
+    const lowerAddress = address.toLowerCase();
+    const hasValidCity = MYANMAR_CITIES.some(city => lowerAddress.includes(city));
+
+    if (!hasValidCity) {
+        let failCount = parseInt(localStorage.getItem("address_fail_count") || "0") + 1;
+        localStorage.setItem("address_fail_count", failCount);
+
+        if (failCount >= 3) {
+            // ၃ ကြိမ်ပြည့်ပါက ၁ နာရီ Lockout သတ်မှတ်ခြင်း
+            const oneHourLater = Date.now() + (60 * 60 * 1000);
+            localStorage.setItem("address_lock_until", oneHourLater);
+            alert(currentLang === 'my' 
+                ? "လုပ်ဆောင်မှု မအောင်မြင်ပါ။ လိပ်စာ ၃ ကြိမ် မှားယွင်းသွားသဖြင့် ၁ နာရီကြာမှသာ ပြန်လည် ကြိုးစားနိုင်ပါမည်။" 
+                : "Operation failed! 3 invalid attempts. Please try again after 1 hour.");
+            closeModal('cart-modal');
+            return;
+        } else {
+            const triesLeft = 3 - failCount;
+            return alert(currentLang === 'my' 
+                ? `လုပ်ဆောင်မှု မအောင်မြင်ပါ။ မြန်မာနိုင်ငံတွင်း မြို့အမည် (ဥပမာ- ရန်ကုန်၊ မန္တလေး...) ထည့်သွင်းပေးပါ။ (${triesLeft} ကြိမ်သာ ထပ်မံကြိုးစားခွင့်ရှိပါမည်)` 
+                : `Operation failed. Please include a valid Myanmar city. (${triesLeft} attempts remaining).`);
+        }
+    }
+
+    // လိပ်စာမှန်ကန်သွားပါက Fail Count ကို Reset လုပ်ခြင်း
+    localStorage.removeItem("address_fail_count");
+    localStorage.removeItem("address_lock_until");
 
     const orderId = "ORD-" + Math.floor(100000 + Math.random() * 900000);
     const totalAmount = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
