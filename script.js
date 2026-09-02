@@ -4,7 +4,7 @@
 const ADMIN_USERNAME = "admin";
 const ADMIN_PASSWORD = "admin123";
 const TELEGRAM_BOT_TOKEN = "8341662970:AAHq_7x79j682Y-5x60-7_0xM3b6f2Zq4YI";
-const TELEGRAM_CHAT_ID = "6198948491";
+const TELEGRAM_CHAT_ID = "8297181241";
 
 const ADDRESS_LOCKOUT_MS = 60 * 60 * 1000;          // လိပ်စာမှားပါက ၁ နာရီ Lockout
 const LOGIN_LOCKOUT_MS = 24 * 60 * 60 * 1000;       // Password မှားပါက ၂၄ နာရီ (၁ ရက်) Lockout
@@ -13,7 +13,7 @@ const MYANMAR_CITIES = [
     "yangon", "ရန်ကုန်", "mandalay", "မန္တလေး", "naypyidaw", "နေပြည်တော်",
     "bago", "ပဲခူး", "taunggyi", "တောင်ကြီး", "monywa", "မုံရွာ",
     "mawlamyine", "မော်လမြိုင်", "pathein", "ပုသိမ်", "pyay", "ပြည်",
-    "meiktila", "မိတ္ထီလာ", "sittwe", "စစ်တွေ", "lashio", "လားရှိုး"
+    "meiktila", "မိတ္ထီလာ", "sittwe", "စစ်တွေ", "lashio","banmaw","ဗန်းမော်", "လားရှိုး"
 ];
 
 // ==========================================
