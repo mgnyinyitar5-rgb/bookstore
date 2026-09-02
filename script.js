@@ -3,7 +3,7 @@
 // ==========================================
 const ADMIN_USERNAME = "admin";
 const ADMIN_PASSWORD = "admin123";
-const TELEGRAM_BOT_TOKEN = "8341662970:AAHq_7x79j682Y-5x60-7_0xM3b6f2Zq4YI";
+const TELEGRAM_BOT_TOKEN = "8939232025:AAEwUq-Zkv3fuHHxJpLnhTzArVt22Q4Bjuo";
 const TELEGRAM_CHAT_ID = "8297181241";
 
 const ADDRESS_LOCKOUT_MS = 60 * 60 * 1000;          // လိပ်စာမှားပါက ၁ နာရီ Lockout
