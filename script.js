@@ -11,9 +11,9 @@ const LOGIN_LOCKOUT_MS = 24 * 60 * 60 * 1000;       // Password မှားပ�
 
 const MYANMAR_CITIES = [
     "yangon", "ရန်ကုန်", "mandalay", "မန္တလေး", "naypyidaw", "နေပြည်တော်",
-    "bago", "ပဲခူး", "taunggyi", "တောင်ကြီး", "monywa", "မုံရွာ","aungpan","အောင်ပန်း",
+    "bago", "ပဲခူး", "taunggyi", "တောင်ကြီး", "monywa", "မုံရွာ",
     "mawlamyine", "မော်လမြိုင်", "pathein", "ပုသိမ်", "pyay", "ပြည်",
-    "meiktila", "မိတ္ထီလာ", "sittwe", "စစ်တွေ", "lashio","လားရှိုး","banmaw","ဗန်းမော်"
+    "meiktila", "မိတ္ထီလာ", "sittwe", "စစ်တွေ", "lashio", "လားရှိုး"
 ];
 
 // ==========================================
@@ -90,24 +90,24 @@ const TRANSLATIONS = {
 // 3. BOOKS DATABASE (44 BOOKS CATALOG)
 // ==========================================
 const DEFAULT_BOOKS = [
-    { id: 1, title: "ဝဘ်ဒီဇိုင်း အခြေခံ", title_en: "Web Design Basics", author: "ညီညီတာ", author_en: "Nyi Nyi Tar", category: "tech", price: 6000, cover: "images/1.jpg", previewText: "HTML, CSS နှင့် JavaScript တို့ဖြင့် ခေတ်မီဝဘ်ဆိုက်တစ်ခုကို အစမှအဆုံး တည်ဆောက်နည်း လက်တွေ့သင်ခန်းစာ။" },
-    { id: 2, title: "JavaScript ကျွမ်းကျင်မှု", title_en: "Mastering JS", author: "အောင်ကျော်", author_en: "Aung Kyaw", category: "tech", price: 10000, cover: "images/2.jpg", previewText: "Modern ES6+, Async/Await နှင့် DOM Manipulation တို့ကို နက်နက်နဲနဲ လေ့လာနိုင်သော စာအုပ်။" },
-    { id: 3, title: "Python စတင်လေ့လာခြင်း", title_en: "Python Starter", author: "ဇော်မင်း", author_en: "Zaw Min", category: "tech", price: 6800, cover: "images/3.jpg", previewText: "Programming အခြေခံမရှိသူများအတွက် Python ဘာသာစကားကို လွယ်ကူရှင်းလင်းစွာ ရေးသားထားခြင်း။" },
-    { id: 4, title: "Database Architecture", title_en: "Database Design", author: "ကျော်စွာ", author_en: "Kyaw Swa", category: "tech", price: 9800, cover: "images/4.jpg", previewText: "SQL နှင့် Relational Database တည်ဆောက်ပုံ အခြေခံသဘောတရားများ။" },
-    { id: 5, title: "ကျန်းမာသန်စွမ်းသော နေ့ရက်များ", title_en: "Healthy Living", author: "ဒေါက်တာလင်း", author_en: "Dr. Lynn", category: "health", price: 10000, cover: "images/5.jpg", previewText: "နေ့စဉ် အစားအသောက်နှင့် လေ့ကျင့်ခန်းဖြင့် ကိုယ်စိတ်နှစ်ပါး ကျန်းမာစေမည့် နည်းလမ်းကောင်းများ။" },
-    { id: 6, title: "စိတ်ဖိစီးမှု လျှော့ချနည်း", title_en: "Stress Management", author: "မြတ်နိုး", author_en: "Myat Noe", category: "health", price: 6200, cover: "images/6.jpg", previewText: "အလုပ်ခွင်နှင့် လူမှုဘဝ စိတ်ဖိစီးမှုများကို ရင်ဆိုင်ကျော်လွှားနည်း အလေ့အကျင့်ကောင်းများ။" },
-    { id: 7, title: "အိပ်စက်ခြင်း အနုပညာ", title_en: "Art of Sleep", author: "ဒေါက်တာထွန်း", author_en: "Dr. Htun", category: "health", price: 9800, cover: "images/7.jpg", previewText: "ကောင်းမွန်စွာ အိပ်စက်ခြင်းဖြင့် ရုပ်ပိုင်းဆိုင်ရာနှင့် စိတ်ပိုင်းဆိုင်ရာ စွမ်းအင် ပြန်လည်ဖြည့်တင်းခြင်း။" },
-    { id: 8, title: "အာဟာရနှင့် သက်ရှည်ကျန်းမာ", title_en: "Nutrition Guide", author: "သီတာ", author_en: "Thidar", category: "health", price: 7000, cover: "images/8.jpg", previewText: "သဘာဝ အစားအစာများနှင့် ခန္ဓာကိုယ်အတွက် လိုအပ်သော ဗီတာမင်များ အကြောင်း။" },
-    { id: 9, title: "အပြုသဘောဆောင်သော အတွေးအခေါ်", title_en: "Positive Mindset", author: "မင်းသုတ", author_en: "Min Thuta", category: "health", price: 14500, cover: "images/9.jpg", previewText: "ဘဝအောင်မြင်မှုအတွက် အရေးကြီးသော အတွေးအခေါ်နှင့် သဘောထား အမြင်များ။" },
-    { id: 10, title: "တရားထိုင်ခြင်း အလေ့အကျင့်", title_en: "Mindful Meditation", author: "ဉာဏ်လင်း", author_en: "Nyan Lynn", category: "health", price: 13000, cover: "images/10.jpg", previewText: "နေ့စဉ် ၅ မိနစ် တရားထိုင်ခြင်းဖြင့် စိတ်တည်ငြိမ်မှု ရှာဖွေခြင်း။" },
-    { id: 11, title: "အချိန်စီမံခန့်ခွဲမှု", title_en: "Time Mastery", author: "ကျော်ဇေယျ", author_en: "Kyaw Zeya", category: "health", price:11000, cover: "images/11.jpg", previewText: "အချိန်ကို အကျိုးရှိစွာ အသုံးချပြီး ထိရောက်သော အလုပ်စွမ်းဆောင်ရည် ရရှိစေရန် လမ်းညွှန်။" },
-    { id: 12, title: "သန်းခေါင်ယံ အသံများ", title_en: "Midnight Whispers", author: "သျှင်သန့်", author_en: "Shin Thant", category: "horror", price: 15000, cover: "images/12.jpg", previewText: "တိတ်ဆိတ်သော ညသန်းခေါင်ယံတွင် ပေါ်ထွက်လာသည့် ထူးဆန်းသော အသံများနှင့် သည်းထိတ်ရင်ဖို ဇာတ်လမ်း။" },
-    { id: 13, title: "တစ္ဆေခြံကြီး၏ လျှို့ဝှက်ချက်", title_en: "Haunted Mansion", author: "ရဲရင့်", author_en: "Ye Yint", category: "horror", price: 8000, cover: "images/13.jpg", previewText: "နှစ်ပေါင်းများစွာ လူသူမနီးဘဲ ပစ်ထားသော အိမ်ကြီးထဲမှ လျှို့ဝှက်ဆန်းကြယ် ဖြစ်ရပ်ဆန်းများ။" },
-    { id: 14, title: "အမှောင်ရိပ်ထဲမှ မျက်လုံးများ", title_en: "Shadow Eyes", author: "ကျော်သူ", author_en: "Kyaw Thu", category: "horror", price: 9000, cover: "images/14.jpg", previewText: "အမှောင်ထုထဲမှ စောင့်ကြည့်နေသော မမြင်နိုင်သော မျက်လုံးတစ်စုံအကြောင်း။" },
-    { id: 15, title: "ကျိန်စာသင့် ကျွန်းဆွယ်", title_en: "Cursed Peninsula", author: "နေမင်း", author_en: "Nay Min", category: "horror", price: 4500, cover: "images/15.jpg", previewText: "ရှေးဟောင်း ကျိန်စာတစ်ခု လွှမ်းခြုံထားသော ရွာလေးဆီသို့ ခရီးသွားမိသူများ၏ ကံကြမ္မာ။" },
+    { id: 1, title: "ဝဘ်ဒီဇိုင်း အခြေခံ", title_en: "Web Design Basics", author: "ညီညီတာ", author_en: "Nyi Nyi Tar", category: "tech", price: 3500, cover: "images/1.jpg", previewText: "HTML, CSS နှင့် JavaScript တို့ဖြင့် ခေတ်မီဝဘ်ဆိုက်တစ်ခုကို အစမှအဆုံး တည်ဆောက်နည်း လက်တွေ့သင်ခန်းစာ။" },
+    { id: 2, title: "JavaScript ကျွမ်းကျင်မှု", title_en: "Mastering JS", author: "အောင်ကျော်", author_en: "Aung Kyaw", category: "tech", price: 4000, cover: "images/2.jpg", previewText: "Modern ES6+, Async/Await နှင့် DOM Manipulation တို့ကို နက်နက်နဲနဲ လေ့လာနိုင်သော စာအုပ်။" },
+    { id: 3, title: "Python စတင်လေ့လာခြင်း", title_en: "Python Starter", author: "ဇော်မင်း", author_en: "Zaw Min", category: "tech", price: 3800, cover: "images/3.jpg", previewText: "Programming အခြေခံမရှိသူများအတွက် Python ဘာသာစကားကို လွယ်ကူရှင်းလင်းစွာ ရေးသားထားခြင်း။" },
+    { id: 4, title: "Database Architecture", title_en: "Database Design", author: "ကျော်စွာ", author_en: "Kyaw Swa", category: "tech", price: 4500, cover: "images/4.jpg", previewText: "SQL နှင့် Relational Database တည်ဆောက်ပုံ အခြေခံသဘောတရားများ။" },
+    { id: 5, title: "ကျန်းမာသန်စွမ်းသော နေ့ရက်များ", title_en: "Healthy Living", author: "ဒေါက်တာလင်း", author_en: "Dr. Lynn", category: "health", price: 3000, cover: "images/5.jpg", previewText: "နေ့စဉ် အစားအသောက်နှင့် လေ့ကျင့်ခန်းဖြင့် ကိုယ်စိတ်နှစ်ပါး ကျန်းမာစေမည့် နည်းလမ်းကောင်းများ။" },
+    { id: 6, title: "စိတ်ဖိစီးမှု လျှော့ချနည်း", title_en: "Stress Management", author: "မြတ်နိုး", author_en: "Myat Noe", category: "health", price: 3200, cover: "images/6.jpg", previewText: "အလုပ်ခွင်နှင့် လူမှုဘဝ စိတ်ဖိစီးမှုများကို ရင်ဆိုင်ကျော်လွှားနည်း အလေ့အကျင့်ကောင်းများ။" },
+    { id: 7, title: "အိပ်စက်ခြင်း အနုပညာ", title_en: "Art of Sleep", author: "ဒေါက်တာထွန်း", author_en: "Dr. Htun", category: "health", price: 2800, cover: "images/7.jpg", previewText: "ကောင်းမွန်စွာ အိပ်စက်ခြင်းဖြင့် ရုပ်ပိုင်းဆိုင်ရာနှင့် စိတ်ပိုင်းဆိုင်ရာ စွမ်းအင် ပြန်လည်ဖြည့်တင်းခြင်း။" },
+    { id: 8, title: "အာဟာရနှင့် သက်ရှည်ကျန်းမာ", title_en: "Nutrition Guide", author: "သီတာ", author_en: "Thidar", category: "health", price: 3500, cover: "images/8.jpg", previewText: "သဘာဝ အစားအစာများနှင့် ခန္ဓာကိုယ်အတွက် လိုအပ်သော ဗီတာမင်များ အကြောင်း။" },
+    { id: 9, title: "အပြုသဘောဆောင်သော အတွေးအခေါ်", title_en: "Positive Mindset", author: "မင်းသုတ", author_en: "Min Thuta", category: "health", price: 3000, cover: "images/9.jpg", previewText: "ဘဝအောင်မြင်မှုအတွက် အရေးကြီးသော အတွေးအခေါ်နှင့် သဘောထား အမြင်များ။" },
+    { id: 10, title: "တရားထိုင်ခြင်း အလေ့အကျင့်", title_en: "Mindful Meditation", author: "ဉာဏ်လင်း", author_en: "Nyan Lynn", category: "health", price: 2500, cover: "images/10.jpg", previewText: "နေ့စဉ် ၅ မိနစ် တရားထိုင်ခြင်းဖြင့် စိတ်တည်ငြိမ်မှု ရှာဖွေခြင်း။" },
+    { id: 11, title: "အချိန်စီမံခန့်ခွဲမှု", title_en: "Time Mastery", author: "ကျော်ဇေယျ", author_en: "Kyaw Zeya", category: "health", price: 3500, cover: "images/11.jpg", previewText: "အချိန်ကို အကျိုးရှိစွာ အသုံးချပြီး ထိရောက်သော အလုပ်စွမ်းဆောင်ရည် ရရှိစေရန် လမ်းညွှန်။" },
+    { id: 12, title: "သန်းခေါင်ယံ အသံများ", title_en: "Midnight Whispers", author: "သျှင်သန့်", author_en: "Shin Thant", category: "horror", price: 3200, cover: "images/12.jpg", previewText: "တိတ်ဆိတ်သော ညသန်းခေါင်ယံတွင် ပေါ်ထွက်လာသည့် ထူးဆန်းသော အသံများနှင့် သည်းထိတ်ရင်ဖို ဇာတ်လမ်း။" },
+    { id: 13, title: "တစ္ဆေခြံကြီး၏ လျှို့ဝှက်ချက်", title_en: "Haunted Mansion", author: "ရဲရင့်", author_en: "Ye Yint", category: "horror", price: 3500, cover: "images/13.jpg", previewText: "နှစ်ပေါင်းများစွာ လူသူမနီးဘဲ ပစ်ထားသော အိမ်ကြီးထဲမှ လျှို့ဝှက်ဆန်းကြယ် ဖြစ်ရပ်ဆန်းများ။" },
+    { id: 14, title: "အမှောင်ရိပ်ထဲမှ မျက်လုံးများ", title_en: "Shadow Eyes", author: "ကျော်သူ", author_en: "Kyaw Thu", category: "horror", price: 3000, cover: "images/14.jpg", previewText: "အမှောင်ထုထဲမှ စောင့်ကြည့်နေသော မမြင်နိုင်သော မျက်လုံးတစ်စုံအကြောင်း။" },
+    { id: 15, title: "ကျိန်စာသင့် ကျွန်းဆွယ်", title_en: "Cursed Peninsula", author: "နေမင်း", author_en: "Nay Min", category: "horror", price: 3800, cover: "images/15.jpg", previewText: "ရှေးဟောင်း ကျိန်စာတစ်ခု လွှမ်းခြုံထားသော ရွာလေးဆီသို့ ခရီးသွားမိသူများ၏ ကံကြမ္မာ။" },
     { id: 16, title: "မုန်တိုင်းပြီးနောက် နေရောင်ခြည်", title_en: "After the Storm", author: "နုနုရည်", author_en: "Nu Nu Yee", category: "drama", price: 3200, cover: "images/16.jpg", previewText: "ဘဝမုန်တိုင်းများကို ကြံ့ကြံ့ခံ ကျော်ဖြတ်ခဲ့သော မိသားစုတစ်စု၏ ရင်နင့်ဖွယ် ဒရာမာဇာတ်လမ်း။" },
-    { id: 17, title: "မေ့မရသော အရိပ်များ", title_en: "Unforgettable Shadows", author: "ခင်ဆွေဦး", author_en: "Khin Swe Oo", category: "drama", price: 3600, cover: "images/17.jpg", previewText: "အတိတ်၏ မှတ်ဉာဏ်များနှင့် ချစ်ခြင်းမေတ္တာအကြား လွန်ဆွဲရသော လူငယ်တစ်ဦး၏ ခံစားချက်။" },
-    { id: 18, title: "ဝေးလွင့်သွားသော ငှက်ငယ်များ", title_en: "Distant Birds", author: "ဂျူး", author_en: "Ju", category: "drama", price: 10000, cover: "images/18.jpg", previewText: "ဘဝရပ်တည်ရေးအတွက် မွေးရပ်မြေကို ခွဲခွာခဲ့ရသူတို့၏ ရင်တွင်းခံစားချက် ရသဝတ္ထု။" }
+    { id: 17, title: "မေ့မရသော အရိပ်များ", title_en: "Unforgettable Shadows", author: "ခင်ဆွေဦး", author_en: "Khin Swe Oo", category: "drama", price: 3500, cover: "images/17.jpg", previewText: "အတိတ်၏ မှတ်ဉာဏ်များနှင့် ချစ်ခြင်းမေတ္တာအကြား လွန်ဆွဲရသော လူငယ်တစ်ဦး၏ ခံစားချက်။" },
+    { id: 18, title: "ဝေးလွင့်သွားသော ငှက်ငယ်များ", title_en: "Distant Birds", author: "ဂျူး", author_en: "Ju", category: "drama", price: 3800, cover: "images/18.jpg", previewText: "ဘဝရပ်တည်ရေးအတွက် မွေးရပ်မြေကို ခွဲခွာခဲ့ရသူတို့၏ ရင်တွင်းခံစားချက် ရသဝတ္ထု။" }
 ];
 
 for (let i = 19; i <= 44; i++) {
@@ -420,12 +420,12 @@ async function handleCheckout(e) {
         let fails = parseInt(localStorage.getItem("address_fail_count") || "0") + 1;
         localStorage.setItem("address_fail_count", fails.toString());
 
-        if (fails >= 3) {
+        if (fails >= 5) {
             localStorage.setItem("checkout_lockout_until", (Date.now() + ADDRESS_LOCKOUT_MS).toString());
             localStorage.removeItem("address_fail_count");
-            alert("လိပ်စာ အမှား ၃ ကြိမ် ဖြစ်ပေါ်သဖြင့် အော်ဒါတင်ခြင်းကို ၁ နာရီတိတိ Lockout ချလိုက်ပါပြီ။");
+            alert("လိပ်စာ အမှား ၅ ကြိမ် ဖြစ်ပေါ်သဖြင့် အော်ဒါတင်ခြင်းကို ၁ နာရီတိတိ Lockout ချလိုက်ပါပြီ။");
         } else {
-            alert(`လိပ်စာတွင် မြန်မာနိုင်ငံရှိ တရားဝင် မြို့အမည် (ဥပမာ- ရန်ကုန်၊ မန္တလေး၊ နေပြည်တော် စသည်) ပါဝင်ရပါမည်။ (အမှားကြိမ်ရေ: ${fails}/3)`);
+            alert(`လိပ်စာတွင် မြန်မာနိုင်ငံရှိ တရားဝင် မြို့အမည် ပါဝင်ရပါမည်။ (အမှားကြိမ်ရေ: ${fails}/5)`);
         }
         return;
     }
@@ -662,7 +662,7 @@ function handleLoginSubmit(e) {
     const loginLockUntil = localStorage.getItem("login_lockout_until");
     if (loginLockUntil && Date.now() < parseInt(loginLockUntil)) {
         const remainingHours = Math.ceil((parseInt(loginLockUntil) - Date.now()) / (60 * 60 * 1000));
-        alert(`Password မှားယွင်းမှု ၃ ကြိမ် ပြည့်သွားသဖြင့် အကောင့်ဝင်ရောက်ခြင်းကို ပိတ်ထားပါသည်။ နောက်ထပ် ${remainingHours} နာရီခန့် (၁ ရက်ပြည့်သည်အထိ) စောင့်ဆိုင်းပြီးမှ ပြန်လည်ကြိုးစားပါ။`);
+        alert(`Password မှားယွင်းမှု ၅ ကြိမ် ပြည့်သွားသဖြင့် အကောင့်ဝင်ရောက်ခြင်းကို ပိတ်ထားပါသည်။ နောက်ထပ် ${remainingHours} နာရီခန့် (၁ ရက်ပြည့်သည်အထိ) စောင့်ဆိုင်းပြီးမှ ပြန်လည်ကြိုးစားပါ။`);
         return;
     }
 
@@ -715,12 +715,12 @@ function handleLoginFailure() {
     let fails = parseInt(localStorage.getItem("login_fail_count") || "0") + 1;
     localStorage.setItem("login_fail_count", fails.toString());
 
-    if (fails >= 3) {
+    if (fails >= 5) {
         localStorage.setItem("login_lockout_until", (Date.now() + LOGIN_LOCKOUT_MS).toString());
         localStorage.removeItem("login_fail_count");
-        alert("Password ၃ ကြိမ် မှားယွင်းသွားသဖြင့် အကောင့်ဝင်ခြင်းကို ၁ ရက် (၂၄ နာရီ) တိတိ ပိတ်လိုက်ပါပြီ။");
+        alert("Password ၅ ကြိမ် မှားယွင်းသွားသဖြင့် အကောင့်ဝင်ခြင်းကို ၁ ရက် (၂၄ နာရီ) တိတိ ပိတ်လိုက်ပါပြီ။");
     } else {
-        alert(`အကောင့်အမည် သို့မဟုတ် Password မှားယွင်းနေပါသည်။ (အမှားကြိမ်ရေ: ${fails}/3 ကြိမ်) \n၃ ကြိမ်ပြည့်ပါက ၁ ရက်တိတိ ပိတ်ပါမည်။`);
+        alert(`အကောင့်အမည် သို့မဟုတ် Password မှားယွင်းနေပါသည်။ (အမှားကြိမ်ရေ: ${fails}/5 ကြိမ်) \n၅ ကြိမ်ပြည့်ပါက ၁ ရက်တိတိ ပိတ်ပါမည်။`);
     }
 }
 
